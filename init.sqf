@@ -58,4 +58,4 @@ if(X_Server) then {
 [0.1, 0.9, 1] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 
 [] execVM "addons\scripts\notherm\twsremove.sqf";
-// [300,300] execVM "addons\scripts\cly_removedead\cly_removedead.sqf";
+[300,300] execVM "addons\scripts\cly_removedead\cly_removedead.sqf";
