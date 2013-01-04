@@ -9,8 +9,8 @@ moderators = [""];
             
 administrators = [
 	"49046214", //
-	"63767942", //
-	"33485190", //
+	"63767942", //Randomized
+	"33485190", //Sutherdawg
 	"28875462", //
 	"70627846"  //Zuen
 ];
@@ -54,9 +54,7 @@ weaponsArray = [
     ["Mk17 Sniper","SCAR_H_LNG_Sniper",500,233],
     ["Mk17 Sniper SD","SCAR_H_LNG_Sniper_SD",750,455],
     ["M110 NV","M110_NVG_EP1",1000,666],
-    ["Mk17 Sniper TWS","SCAR_H_STD_TWS_SD",1500,755],
-    ["M107","m107",2000,850],
-    ["M110 TWS","M110_TWS_EP1",2500,1000]
+    ["M107","m107",2000,850]
 ];
 
 //Gun Store Ammo List
