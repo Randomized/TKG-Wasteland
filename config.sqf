@@ -8,10 +8,10 @@
 moderators = [""]; 
             
 administrators = [
-	"49046214", //
+	"49046214", //Centinal
 	"63767942", //Randomized
 	"33485190", //Sutherdawg
-	"28875462", //
+	"28875462", //Fuzzi
 	"70627846"  //Zuen
 ];
 
