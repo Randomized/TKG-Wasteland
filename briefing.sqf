@@ -1,4 +1,4 @@
-player createDiarySubject ["404games", "404Games Information"];
+player createDiarySubject ["TKGaming.com", "TKGaming Information"];
 player createDiarySubject ["changelog", "404Games Change Log"];
 player createDiarySubject ["wasteland", "What is Wasteland?"];
 
@@ -10,7 +10,6 @@ player createDiaryRecord["changelog",
 		[Fixed] - Server performance issues.<br/>
 		[Fixed] - Vehicle cleanup.<br/>
 		[Fixed] - Team locking time which is actually 3 mins now.<br/>
-		[Test] - I'm Testing this only
 "
 ]
 ];
@@ -155,42 +154,38 @@ player createDiaryRecord["changelog",
 ];
 
 
-player createDiaryRecord["404games",
+player createDiaryRecord["TKGaming.com",
 [
 "Credits",
 "
 <br/>
 	Contributors:<br/><br/>
 	Credit to Tonic for original game-mode creation.<br/><br/>
-	404 Developers:<br/><br/>
-	Developer - Deadbeat<br/>
-	Developer - Costlyy<br/>
-    Developer - Pulse<br/>
-	Server Host - Domuk<br/>
+	404Developers - Deadbeat, Costlyy, Pulse<br/>
+	TKG Developers - Leavaris, Zuen<br/>
+	Server Host - TKGaming.com<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["TKGaming.com",
 [
 "Bug and Cheat Reporting",
 "
 <br/>
-	Found a bug? Please report it at: http://www.404games.co.uk/bugs<br/><br/>
-	Suspect a player is hacking or exploiting? Please report it at: http://www.404games.co.uk/bans<br/><br/>
+	Found a bug? Please report it at: http://www.tkgaming.com Or at the original authors website (404)<br/><br/>
 	Please remeber this game-mode is in continuous development and there will be bugs. 
 "
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["TKGaming.com",
 [
 "Teamspeak",
 "
 <br/>
 	There is a public Teamspeak 3 server available for players of this server.<br/><br/>
-	Teamspeak IP: ts.404games.co.uk:9988<br/><br/>
-	Please join and say hello! (Please speak English)
+	Teamspeak IP: 176.31.233.192<br/><br/>
 "
 ]
 ];
