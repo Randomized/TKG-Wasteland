@@ -145,6 +145,7 @@ player createDiaryRecord["changelog",
 "2.6 Dev3",
 "
 <br/>
+		[Added] - TKG Scrips added to remove dead bodys and objects every 10 minutes and TWS removal.<br/>
 		[Fixed] - Flickering Icons.<br/>
 		[Fixed] - Spawning with guns.<br/>
 		[Fixed] - Spawning in a group.<br/>
