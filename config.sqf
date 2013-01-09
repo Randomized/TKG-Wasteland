@@ -4,24 +4,6 @@
 //	@file Created: 20/11/2012 05:13
 //	@file Description: Main config.
 
-//Admin menu access levels
-moderators = [""]; 
-            
-administrators = [
-	"00000000", //placeholder
-];
-
-serverAdministrators = [
-	"89811078", //Leavaris
-	"90354502", //TerraNight
-	"33485190", //Sutherdawg
-	"11188934"  //Blade
-	"49046214", //Centinal
-	"63767942", //Randomized
-	"28875462", //Fuzzi
-	"70627846"  //Zuen
-];
-      
 // --------------------------------------------------------------------------------------------------- \\
 // ----------  !DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING!	---------- \\
 // ----------																				---------- \\
@@ -29,8 +11,6 @@ serverAdministrators = [
 // ----------			 as a result of unauthorised modifications to this file.			---------- \\
 // --------------------------------------------------------------------------------------------------- \\
 
-//Client Vars
-playerSetupComplete = false;
                                                                                                 
 //Gunstore Weapon List - Gun Store Base List
 // Text name, classname, buy cost, sell amount

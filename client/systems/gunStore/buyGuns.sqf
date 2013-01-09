@@ -81,7 +81,7 @@ switch(_switch) do
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 		lbClear _cartlist;
 	};
-	
+
 	//Buy To Crate
 	case 1:
 	{
@@ -104,10 +104,10 @@ switch(_switch) do
 				gsCrate addWeaponCargoGlobal [_class, 1];
 			}}forEach accessoriesArray;
 		};
-		
+
 		player setVariable["cmoney",_playerMoney - gunStoreCart,false];
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-		
+
 		gunStoreCart = 0;
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 		lbClear _cartlist;

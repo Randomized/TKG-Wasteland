@@ -22,8 +22,3 @@ if (R3F_LOG_mutex_local_verrou) then {
 	publicVariable "R3F_ARTY_AND_LOG_PUBVAR_setDir";
 	R3F_LOG_mutex_local_verrou = false;
 };
-
-
-
-
-
