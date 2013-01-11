@@ -1,63 +1,102 @@
-//	@file Version: 1.0
-//	@file Name: radarMarkerUpdate.sqf
-//	@file Author: [404] Costlyy
-//	@file Created: 08/12/2012 15:19
-//	@file Args: [int(key)]
+/*
+	@file Author: [404] Costlyy
+	@file Version: 1.0
+   	@file Date:	21/11/2012	
+	@file Description: Locks an object until the player disconnects.
+	@file Args: [object,player,int,lockState(lock = 0 / unlock = 1)]
+*/
 
-if(!X_Server) exitWith {};
+// Check if mutex lock is active.
+if(R3F_LOG_mutex_local_verrou) exitWith {
+	player globalChat STR_R3F_LOG_mutex_action_en_cours;
+};
 
-private["_uniqueID", "_radarStationPos", "_playerSide", "_markerState", "_enemyCount", "_friendlyCount", "_currSide", "_runLoop", "_stillAlive"];
+private["_locking", "_currObject", "_lockState", "_lockDuration", "_stringEscapePercent", "_interation", "_unlockDuration", "_totalDuration"];
 
-_uniqueID = _this select 0;
-_radarStationPos = _this select 1;
-_playerSide = _this select 2;
-_markerState = _this select 3;
+_currObject = _this select 0;
+_lockState = _this select 3;
 
-_runLoop = true;
-while {_runLoop} do {
-	_stillAlive = false;
+_totalDuration = 0;
+_stringEscapePercent = "%"; // Required to get the % sign into a formatted string.
 
-	// find state
-    _enemyCount = 0;
-    _friendlyCount = 0; 
- 	{          
-        _currSide = side _x; 
-        
-    	if ((isPlayer _x) AND (str(_currSide) == _playerSide) AND _x distance _radarStationPos < 350) then {
-            _friendlyCount = _friendlyCount + 1;
-        };
-        if ((isPlayer _x) AND (str(_currSide) != _playerSide) AND _x distance _radarStationPos < 350) then {
-        	_enemyCount = _enemyCount + 1;
-        };                                   
-    }forEach playableUnits;
+switch (_lockState) do {
+    case 0:{ // LOCK
     
-    if(_friendlyCount == 0 AND _enemyCount == 0 ) then {
-    	_markerState = 0; // default - nothing
-    };
-    if(_friendlyCount > 0) then {
-    	_markerState = 1; // Friendly NO enemy
-    };
-    if(_enemyCount > 0) then {
-    	_markerState = 2; // Enemy NO friendly
-    };
-    if(_enemyCount > 0 AND _friendlyCount > 0) then {
-    	_markerState = 3; // Enemy AND friendly
-    };
+    	R3F_LOG_mutex_local_verrou = true; // Set mutex lock to stop the player performing concurrent actions.
+    
+		_totalDuration = 5;
+		_lockDuration = _totalDuration;
+		_iteration = 0;
 
-   	{
-    	if(_x select 0 == _uniqueID) then {
-        	_stillAlive = true;
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
+
+		for "_iteration" from 1 to _lockDuration do {
+
+			_lockDuration = _lockDuration - 1;
+		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
+
+			2 cutText [format["Object lock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+		    sleep 1;
+
+		    if(player distance _currObject > 50) exitWith { // If the player dies, revert state.
+		        2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+
+			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed.
+		        sleep 1;
+                _currObject setVariable ["objectLocked", true, true];
+                2 cutText ["", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+		    }; 
+		};
+
+		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.       
+    };
+    case 1:{ // UNLOCK
+        
+        R3F_LOG_mutex_local_verrou = true; // Set mutex lock to stop the player performing concurrent actions.
+
+		_totalDuration = 45;
+		_unlockDuration = _totalDuration;
+		_iteration = 0;
+
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
+
+		for "_iteration" from 1 to _unlockDuration do {
+
+            if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
+                player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+            };
             
-            // delete current marker from server
-            clientRadarMarkers set [_forEachIndex, "REMOVETHISCRAP"];
-			clientRadarMarkers = clientRadarMarkers - ["REMOVETHISCRAP"]; 
-              
-            // put updated marker in with updated state
-			clientRadarMarkers set [count clientRadarMarkers,[_uniqueID,_radarStationPos,_playerSide, _markerState]];
-			publicVariable "clientRadarMarkers"; 
-        };
-    }forEach clientRadarMarkers;
+			_unlockDuration = _unlockDuration - 1;
+		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
 
-	if (!_stillAlive) exitWith {_runLoop = false;};
-    sleep 3;
+			2 cutText [format["Object unlock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+		    sleep 1;
+
+		    if(player distance _currObject > 50) exitWith { // If the player dies, revert state.
+		        2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+
+			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed
+		        sleep 1;
+                _currObject setVariable ["objectLocked", false, false];
+                2 cutText ["", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+		    }; 
+		};
+
+		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.     
+    };
+    default{  // This should not happen... 
+        hint "An error has occured in LockStateMachine.sqf and the current action can not be completed. Please notify the server administrator.";
+        diag_log format["WASTELAND DEBUG: An error has occured in LockStateMachine.sqf. _lockState was unknown. _lockState actual: %1", _lockState];
+    };
+    
+    if !(R3F_LOG_mutex_local_verrou) then {
+        R3F_LOG_mutex_local_verrou = false;
+        diag_log format["WASTELAND DEBUG: An error has occured in LockStateMachine.sqf. Mutex lock was not reset. Mutex lock state actual: %1", R3F_LOG_mutex_local_verrou];
+    }; 
 };
