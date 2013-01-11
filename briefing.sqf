@@ -173,17 +173,12 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"2.8 (TKG)",
+"1.0 (TKG)",
 "
 <br/>
 		[Added] - Gun Store Anti-Kill System.<br/>
 		[Removed] - Yellow Ash/Dust overlay look.<br/>
 		[Fixed] - Removed TWS from Gun Store.<br/>
-		[Fixed] - Player Setup and Initialization.<br/>
-		[Fixed] - Joining with a group.<br/>
-		[Fixed] - Feedback messages missing.<br/>
-		[Fixed] - Money dupe.<br/>
-		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
 "
 ]
 ];
