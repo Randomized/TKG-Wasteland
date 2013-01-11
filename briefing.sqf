@@ -165,12 +165,28 @@ player createDiaryRecord["changelog",
 		[Fixed] - Player Setup and Initialization.<br/>
 		[Fixed] - Joining with a group.<br/>
 		[Fixed] - Feedback messages missing.<br/>
-        [Fixed] - Money dupe.<br/>
+		[Fixed] - Money dupe.<br/>
 		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
 "
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.8 (TKG)",
+"
+<br/>
+		[Added] - Gun Store Anti-Kill System.<br/>
+		[Removed] - Yellow Ash/Dust overlay look.<br/>
+		[Fixed] - Removed TWS from Gun Store.<br/>
+		[Fixed] - Player Setup and Initialization.<br/>
+		[Fixed] - Joining with a group.<br/>
+		[Fixed] - Feedback messages missing.<br/>
+		[Fixed] - Money dupe.<br/>
+		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
+"
+]
+];
 
 player createDiaryRecord["TKGaming.com",
 [

@@ -36,7 +36,7 @@ class Mission
 	randomSeed=10079095;
 	class Intel
 	{
-		briefingName="TKGaming.com Wasteland - Chernarus [v2.7]";
+		briefingName="TKGaming.com Wasteland - Chernarus [v2.8]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.25;
