@@ -1,4 +1,4 @@
-//	@file Version: 1.0
+//	@file Version: 1.1
 //	@file Name: createGeneralStoreMarkers.sqf
 //	@file Author: [404] Deadbeat (Original concept by Sa-Matra)
 //	@file Created: 28/11/2012 05:19
@@ -25,7 +25,7 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
     _markerName setMarkerColorLocal _col_empty;
 	_markerName setMarkerSizeLocal [_radius, _radius];
 	_markerName setMarkerBrushLocal "Grid";
-	_markerName setMarkerAlphaLocal 0.5;
+	_markerName setMarkerAlphaLocal 0.3;
 
 	// General store title    
     _markerName = format["marker_shop_title_%1",_x];
@@ -46,8 +46,8 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
     _markerName setMarkerTypeLocal "mil_dot";
     _markerName setMarkerColorLocal _col_empty;
 	_markerName setMarkerSizeLocal [0.8,0.8];
-	_markerName setMarkerTextLocal "General Store is Empty";
-    _markerName setMarkerAlphaLocal 0.5;
+	_markerName setMarkerTextLocal "Empty";
+    _markerName setMarkerAlphaLocal 0.3;
 
 	_status set [count _status, "EMPTY"];
 } forEach _generalStores;
@@ -62,22 +62,22 @@ _setStatus = {
 		case "EMPTY": {
 			_markerNameZone setmarkerColorLocal _col_empty;
 			_markerNameDescription setmarkerColorLocal _col_empty;
-			_markerNameDescription setMarkerTextLocal "General Store is Empty";
+			_markerNameDescription setMarkerTextLocal "Empty";
 		};
 		case "ENEMY": {
 			_markerNameZone setmarkerColorLocal _col_enemy;
 			_markerNameDescription setmarkerColorLocal _col_enemy;
-			_markerNameDescription setMarkerTextLocal "General Store has Enemy Players";
+			_markerNameDescription setMarkerTextLocal "Enemy Players";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
 			_markerNameDescription setmarkerColorLocal _col_friendly;
-			_markerNameDescription setMarkerTextLocal "General Store has Friendly Players";
+			_markerNameDescription setMarkerTextLocal "Friendly Players";
 		};
 		case "MIXED": {
 			_markerNameZone setmarkerColorLocal _col_mixed;
 			_markerNameDescription setmarkerColorLocal _col_mixed;
-			_markerNameDescription setMarkerTextLocal "General Store has Enemy and Friendly Players";
+			_markerNameDescription setMarkerTextLocal "Enemy and Friendly Players";
 		};
 	};
 

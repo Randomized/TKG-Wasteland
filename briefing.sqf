@@ -183,6 +183,17 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.5 (TKG)",
+"
+<br/>
+		[Added] - Display players in each town.<br/>
+		[Changed] - Cleaned up some text display.<br/>
+"
+]
+];
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",
