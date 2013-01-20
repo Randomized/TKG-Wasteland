@@ -190,6 +190,9 @@ player createDiaryRecord["changelog",
 <br/>
 		[Added] - Display players in each town.<br/>
 		[Changed] - Cleaned up some text display.<br/>
+		[Changed] - Created a new Interface look.<br/>
+		[Fixed] - Typo in xml string file.<br/>
+		[Added] - Tech level access.<br/>
 "
 ]
 ];
