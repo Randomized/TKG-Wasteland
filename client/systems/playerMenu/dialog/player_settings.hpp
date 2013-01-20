@@ -32,7 +32,7 @@ class playerSettings {
         	x = 0.02; y = 0.32;
 			w = 0.04; h = 0.04;
 		};
-		
+		/*
 		class waterIcon : w_RscPicture {
 	  		idc = -1;
         	text = "client\icons\water.paa";
@@ -46,7 +46,7 @@ class playerSettings {
         	x = 0.02; y = 0.26;
 			w = 0.04; h = 0.04;
 		};
-		
+		*/
 		class moneyText : w_RscText {
 			idc = money_text;
 			text = "";
