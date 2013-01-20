@@ -1,15 +1,10 @@
-//Admin menu access levels
-moderators = [""]; 
-            
-
-
-
-
-
 if(!X_Server) exitWith {};
 
 //Admin menu access levels
-moderators = [""]; 
+moderators = [
+	"89607238",  //CombatMink
+	"49869702"	//Cookie
+]; 
 publicVariable "moderators"; 
    
    
@@ -26,7 +21,12 @@ serverAdministrators = [
 	"11188934", //Blade
 	"49046214", //Centinal
 	"63767942", //Randomized
-	"28875462", //Fuzzi
-	"70627846"  //Zuen
+	"28875462" //Fuzzi
 ]; 
 publicVariable "serverAdministrators";
+
+serverTechnician = [
+	"70627846"  //Zuen
+]; 
+publicVariable "serverTechnician";
+

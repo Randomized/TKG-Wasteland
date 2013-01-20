@@ -7,7 +7,7 @@
 private ["_uid","_handle"];
 
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
     if ((_uid in moderators)) then {
 		execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
         hint "Welcome Moderator";		
@@ -19,7 +19,12 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
     if ((_uid in serverAdministrators)) then {
 		execVM "client\systems\adminPanel\loadServerAdministratorMenu.sqf";
         hint "Welcome Owner";		
-	};	
+	};
+	if ((_uid in serverTechnician)) then {
+		execVM "client\systems\adminPanel\loadserverTechnicianMenu.sqf";
+		hint "Welcome Tech";		
+	};
+	
 } else {
     sleep 1;
     _handle = player execVM "client\systems\adminPanel\checkAdmin2.sqf"; 

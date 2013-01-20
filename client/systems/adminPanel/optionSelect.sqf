@@ -4,25 +4,34 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
+#define serverTechMenu_option 50009
 #define serverAdminMenu_option 50007
 #define modMenu_option 50005
 #define debugMenu_option 50003
 #define adminMenu_option 50001
 disableSerialization;
 
-private ["_panelType","_displayAdmin","_displayMod","_displayServerAdmin","_displayDebug","_modSelect","_adminSelect","_serverAdminSelect","_debugSelect"];
+private [
+	"_panelType",
+	"_displayAdmin","_displayMod","_displayServerAdmin","_displayServerTech","_displayDebug",
+	"_modSelect","_adminSelect","_serverAdminSelect","_serverTechSelect","_debugSelect"
+];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
 	_panelType = _this select 0;
 
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
 	_displayMod = uiNamespace getVariable "ModMenu";
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
+	_displayServerTech = uiNamespace getVariable "ServerTechMenu";
 	_displayDebug = uiNamespace getVariable "DebugMenu";
 
 	_modSelect = _displayMod displayCtrl modMenu_option;
 	_adminSelect = _displayAdmin displayCtrl adminMenu_option;
 	_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;
+	_serverTechSelect = _displayServerTech displayCtrl serverTechMenu_option;
 	_debugSelect = _displayDebug displayCtrl debugMenu_option;
 
 	switch (_panelType) do
@@ -137,6 +146,32 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	                };
 			    };
 			};		
+	    };
+		case 4: //Server Technician panel
+	    {
+			switch (lbCurSel _serverTechSelect) do
+			{
+			    case 0: //Player Menu
+				{
+	                closeDialog 0;
+					execVM "client\systems\adminPanel\playerMenu.sqf";
+				};
+				case 1: //Full Vehicle Management
+				{
+	                closeDialog 0;
+					execVM "client\systems\adminPanel\vehicleManagement.sqf";
+				};
+			    case 2: //Teleport
+			    {
+	                closeDialog 0;    
+	                hint "Click on map to teleport";
+	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
+			    };
+	            case 3: //Money
+			    {      
+					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+			    };
+			};
 	    };
 	};
 } else {

@@ -20,6 +20,7 @@ class Header
 #include "client\systems\adminPanel\dialog\adminMenu.hpp"
 #include "client\systems\adminPanel\dialog\modMenu.hpp"
 #include "client\systems\adminPanel\dialog\serverAdminMenu.hpp"
+#include "client\systems\adminPanel\dialog\serverTechMenu.hpp"
 #include "client\systems\adminPanel\dialog\debugMenu.hpp"
 #include "client\systems\adminPanel\dialog\playerMenu.hpp"
 #include "client\systems\adminPanel\dialog\VehicleManagement.hpp"
