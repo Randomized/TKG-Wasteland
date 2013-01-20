@@ -6,7 +6,11 @@
 //	@file Args:
 
 disableSerialization;
-private["_ui","_hud","_food","_water"];
+private["_ui","_hud","_food","_water","_healthICON","_foodICON","_waterICON"];
+
+_healthICON = 100;
+_foodICON = 100;
+_waterICON = 100;
 
 while {true} do
 {
@@ -21,9 +25,69 @@ while {true} do
     _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
     _health = 100 - (_health * 100);
     
-    _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%4 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, hungerLevel, thirstLevel, (player getVariable "cmoney")];
+	if(_health >= 100) then {
+		_healthICON = 100;
+	} else {
+		if(_health >= 75) then {
+			_healthICON = 75;
+		} else {
+			if(_health >= 50) then {
+				_healthICON = 50;
+			} else {
+				if(_health >= 25) then {
+					_healthICON = 25;
+				} else {
+					_healthICON = 0;
+				};
+			};
+		};
+	};
+	
+	if(hungerLevel >= 100) then {
+		_foodICON = 100;
+	} else {
+		if(hungerLevel >= 75) then {
+			_foodICON = 75;
+		} else {
+			if(hungerLevel >= 50) then {
+				_foodICON = 50;
+			} else {
+				if(hungerLevel >= 25) then {
+					_foodICON = 25;
+				} else {
+					_foodICON = 0;
+				};
+			};
+		};
+	};
+	
+	if(thirstLevel >= 100) then {
+		_waterICON = 100;
+	} else {
+		if(thirstLevel >= 75) then {
+			_waterICON = 75;
+		} else {
+			if(thirstLevel >= 50) then {
+				_waterICON = 50;
+			} else {
+				if(thirstLevel >= 25) then {
+					_waterICON = 25;
+				} else {
+					_waterICON = 0;
+				};
+			};
+		};
+	};
+	
+	_vitals ctrlSetStructuredText parseText format ["
+	<img size='2.5' image='client\icons\blood\hp_%1.paa'/><br/>
+	<img size='2.5' image='client\icons\food\fd_%2.paa'/><br/>
+	<img size='2.5' image='client\icons\water\trs_%3.paa'/><br/>
+	", _healthICON, _foodICON, _waterICON];
+	
     _vitals ctrlCommit 0;
-        
+     
+/*
     if(player != vehicle player) then
     {
         _tempString = "";
@@ -41,6 +105,6 @@ while {true} do
         _hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
         _hudVehicle ctrlCommit 0;
     };
-        
+*/
     sleep 1;
 };

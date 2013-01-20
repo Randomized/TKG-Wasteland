@@ -25,7 +25,8 @@ class WastelandHud {
 			size = 0.040;
 			x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
                         y = safeZoneY + (safeZoneH * (1 - (0.30 / SafeZoneH)));
-			w = 0.4; h = 0.65;
+			w = 0.4;
+			h = 0.65;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
@@ -41,12 +42,13 @@ class WastelandHud {
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
 			x = safeZoneX + (safeZoneW * (1 - (0.16 / SafeZoneW)));
-                        y = safeZoneY + (safeZoneH * (1 - (0.20 / SafeZoneH)));
-			w = 0.14; h = 0.20;
+			y = safezoneY + safezoneW - 0.6;
+			w = 0.14; 
+			h = 0.40;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
-			text = "100 <img size='0.8' image='client\icons\food.paa'/><br/>100 <img size='0.8' image='client\icons\water.paa'/><br/>200 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
+			text = "<img size='2' image='client\icons\blood\hp_100.paa'/><br/>100 <img image='client\icons\water.paa'/><br/>200 <img image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 			shadow = 2;
 			class Attributes {
 				align = "right";
