@@ -1,5 +1,5 @@
 player createDiarySubject ["TKGaming.com", "TKGaming Information"];
-player createDiarySubject ["changelog", "404Games Change Log"];
+player createDiarySubject ["changelog", "Change Log"];
 player createDiarySubject ["wasteland", "What is Wasteland?"];
 
 player createDiaryRecord["changelog",
@@ -189,10 +189,21 @@ player createDiaryRecord["changelog",
 "
 <br/>
 		[Added] - Display players in each town.<br/>
-		[Changed] - Cleaned up some text display.<br/>
-		[Changed] - Created a new Interface look.<br/>
-		[Fixed] - Typo in xml string file.<br/>
 		[Added] - Tech level access.<br/>
+		[Changed] - Cleaned up some text display.<br/>
+		[Fixed] - Typo in xml string file.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.6 (TKG)",
+"
+<br/>
+		[Added] - Paycheck system to gain more money overtime.<br/>
+		[Removed] - Show enemy locations in towns when there is no friendlies in the town.<br/>
+		[Fixed] - Show independants in your group as friendly in towns.<br/>
 "
 ]
 ];
@@ -239,7 +250,7 @@ player createDiaryRecord["wasteland",
 "
 <br/>
     At the start of the game, spread out and find supplies before worrying about where to establish a meeting place or a base, supplies are important and very valuable.<br/><br/>
-    When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, castles, etc. remember, players randomly spawn in and around towns and could even spawn inside your base should you set it up in a town.<br/><br/>
+    When picking a base location, it is best advised to pick a place that is out of the way and not so obvious such as airports, cities, castles, etc.<br/><br/>
     If you spawn in an area with no vehicles or supplies in the immediate area, DO NOT just click respawn from the pause menu, chances are if you search an area of a few hundred meters, you will find something.<br/><br/>
     Always be on the lookout for nightvision. Two pairs are located in the Large Cache, and there are pairs scattered throughout cars. You can also purchase them from the gunstores. Nighttime without them SUCKS, and if you have them, you can conduct stealth raids on enemy bases under the cover of complete darkness.<br/><br/>
     When you set up a base, never leave your supplies unguarded, one guard will suffice, but it is recommended you have at least 2, maybe 3 guards at base at all times.<br/><br/>

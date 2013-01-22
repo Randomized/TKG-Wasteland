@@ -5,12 +5,17 @@
 //	@file Created: 19/01/2013 21:15
 //	@file Args:
 
+private["_side"];
+
 _radius = 300;
 _status = [];
+_tempArray = [];
 _col_empty = "ColorBlack";
 _col_enemy = "ColorRed";
 _col_friendly = "ColorGreen";
 _col_mixed = "ColorOrange";
+
+if(str(playerSide) == "GUER") then {_side = "Independent"};
 
 {
 	_pos = getMarkerPos (_x select 0);
@@ -40,7 +45,7 @@ _setStatus = {
 			_markerNameZone setmarkerColorLocal _col_empty;
 		};
 		case "ENEMY": {
-			_markerNameZone setmarkerColorLocal _col_enemy;
+//			_markerNameZone setmarkerColorLocal _col_enemy;
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
@@ -60,48 +65,63 @@ _setStatus = {
 //Check each town to see if their state has changed and then calls the update function to make the display the correct state.
 showmarkers = true;
 while {showmarkers} do {
+	
+	if((count units group player > 1) AND (_side == "Independent")) then
     {
+        _tempArray = [];
+		
+        {
+        	_tempArray set [count _tempArray,getPlayerUID _x];    
+        }forEach units player;
+	};
 
-		_unit = getMarkerPos (_x select 0);
-		
-		_friendlyCount = 0;
-		_enemyCount = 0;
-		
-		{
-			if((_x distance _unit < _radius) && (player != _x)) then {
-				if(playerSide in [west,east] && playerSide == side _x) then {
-					_friendlyCount = _friendlyCount + 1;
-				} else {
-					_enemyCount = _enemyCount + 1;
+    {
+			_unit = getMarkerPos (_x select 0);
+			
+			_friendlyCount = 0;
+			_enemyCount = 0;
+			
+			{
+				if((_x distance _unit < _radius) && (player != _x)) then {
+					if(getPlayerUID _x in _tempArray) then
+					{
+						_friendlyCount = _friendlyCount + 1;
+					} else {
+						if(playerSide in [west,east] && playerSide == side _x) then {
+							_friendlyCount = _friendlyCount + 1;
+						} else {
+							_enemyCount = _enemyCount + 1;
+						};
+					};
 				};
-			};
-		} forEach playableUnits;
+			} forEach playableUnits;
 
-		if(player distance _unit < _radius) then {
-			if(_enemyCount > 0) then {
-				if(_friendlyCount > 0) then {
-					[_forEachIndex, "MIXED", true] call _setStatus;
+			if(player distance _unit < _radius) then {
+				if(_enemyCount > 0) then {
+					if(_friendlyCount > 0) then {
+						[_forEachIndex, "MIXED", true] call _setStatus;
+					} else {
+						[_forEachIndex, "ENEMY", true] call _setStatus;
+					};
 				} else {
-					[_forEachIndex, "ENEMY", true] call _setStatus;
+					[_forEachIndex, "FRIENDLY", true] call _setStatus;
 				};
 			} else {
-				[_forEachIndex, "FRIENDLY", true] call _setStatus;
-			};
-		} else {
-			if(_enemyCount > 0) then {
-				if(_friendlyCount > 0) then {
-					[_forEachIndex, "MIXED", false] call _setStatus;
+				if(_enemyCount > 0) then {
+					if(_friendlyCount > 0) then {
+						[_forEachIndex, "MIXED", false] call _setStatus;
+					} else {
+						[_forEachIndex, "ENEMY", false] call _setStatus;
+					};
 				} else {
-					[_forEachIndex, "ENEMY", false] call _setStatus;
+					if(_friendlyCount > 0) then {
+						[_forEachIndex, "FRIENDLY", false] call _setStatus;
+					} else {
+						[_forEachIndex, "EMPTY", false] call _setStatus;
+					};
 				};
-			} else {
-				if(_friendlyCount > 0) then {
-					[_forEachIndex, "FRIENDLY", false] call _setStatus;
-				} else {
-					[_forEachIndex, "EMPTY", false] call _setStatus;
-				};
-			};
-		};       
+			};   
+
     }forEach cityList;
 	
 	sleep 2;
