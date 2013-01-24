@@ -45,9 +45,8 @@ switch(_switch) do
 				player setVariable["canfood",(player getVariable "canfood")-1,true];
 				hungerLevel = hungerLevel + 30;
 				if(hungerLevel > 100) then {hungerLevel = 100};
-                sleep 3;
+                sleep 2;
                 mutexScriptInProgress = false;
-        		player playmove "AinvPknlMstpSnonWnonDnon_healed_1";
 
 			};
 			case "water": 
@@ -57,9 +56,8 @@ switch(_switch) do
 				player setVariable["water",(player getVariable "water")-1,true];
 				thirstLevel = thirstLevel + 50;
 				if(thirstLevel > 100) then {thirstLevel = 100};
-				sleep 3;
+				sleep 2;
                 mutexScriptInProgress = false;
-                player playmove "AinvPknlMstpSnonWnonDnon_healed_1";
 			};
 
 			case "medkit": 
