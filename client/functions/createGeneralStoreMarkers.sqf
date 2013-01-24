@@ -4,13 +4,18 @@
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
 
+private["_side"];
+
 _radius = 200;
 _status = [];
+_tempArray = [];
 _generalStores = ["generalStore1","generalStore2","generalStore3","generalStore4","generalStore5"];
 _col_empty = "ColorBlue";
 _col_enemy = "ColorRed";
 _col_friendly = "ColorGreen";
 _col_mixed = "ColorOrange";
+
+if(str(playerSide) == "GUER") then {_side = "Independent"};
 
 //Creates the markers around general stores.
 waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _generalStores == count _generalStores};
@@ -65,9 +70,9 @@ _setStatus = {
 			_markerNameDescription setMarkerTextLocal "Empty";
 		};
 		case "ENEMY": {
-			_markerNameZone setmarkerColorLocal _col_enemy;
-			_markerNameDescription setmarkerColorLocal _col_enemy;
-			_markerNameDescription setMarkerTextLocal "Enemy Players";
+			//_markerNameZone setmarkerColorLocal _col_enemy;
+			//_markerNameDescription setmarkerColorLocal _col_enemy;
+			//_markerNameDescription setMarkerTextLocal "Enemy Players";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
@@ -91,16 +96,32 @@ _setStatus = {
 //Check each store to see if their state has changed and then calls the update function to make the display the correct state.
 showmarkers = true;
 while {showmarkers} do {
+
+    if((count units group player > 1) AND (_side == "Independent")) then
     {
+        _tempArray = [];
+		
+        {
+        	_tempArray set [count _tempArray,getPlayerUID _x];    
+        }forEach units player;
+	};
+	
+	{
     	_unit = missionNamespace getVariable (_generalStores select _forEachIndex);
 		_friendlyCount = 0;
 		_enemyCount = 0;
+		
 		{
 			if((_x distance _unit < _radius) && (player != _x)) then {
-				if(playerSide in [west,east] && playerSide == side _x) then {
+				if(getPlayerUID _x in _tempArray) then
+				{
 					_friendlyCount = _friendlyCount + 1;
 				} else {
-					_enemyCount = _enemyCount + 1;
+					if(playerSide in [west,east] && playerSide == side _x) then {
+						_friendlyCount = _friendlyCount + 1;
+					} else {
+						_enemyCount = _enemyCount + 1;
+					};
 				};
 			};
 		} forEach playableUnits;

@@ -41,7 +41,7 @@ class WastelandHud {
 			idc = hud_status_idc;
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
-			x = safeZoneX + (safeZoneW * (1 - (0.16 / SafeZoneW)));
+			x = safeZoneX + (safeZoneW * (1 - (0.17 / SafeZoneW)));
 			y = safeZoneY + (safeZoneH * (1 - (0.40 / SafeZoneH)));
 			w = 0.14; 
 			h = 0.40;

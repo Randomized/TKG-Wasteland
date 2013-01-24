@@ -25,16 +25,16 @@ while {true} do
     _health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
     _health = 100 - (_health * 100);
     
-	if(_health >= 100) then {
+	if(_health <= 100 && _health > 75) then {
 		_healthICON = 100;
 	} else {
-		if(_health >= 75) then {
+		if(_health <= 75 && _health > 50) then {
 			_healthICON = 75;
 		} else {
-			if(_health >= 50) then {
+			if(_health <= 50 && _health > 25) then {
 				_healthICON = 50;
 			} else {
-				if(_health >= 25) then {
+				if(_health <= 25 && _health > 0) then {
 					_healthICON = 25;
 				} else {
 					_healthICON = 0;
@@ -43,16 +43,16 @@ while {true} do
 		};
 	};
 	
-	if(hungerLevel >= 100) then {
+	if(hungerLevel <= 100 && hungerLevel > 75) then {
 		_foodICON = 100;
 	} else {
-		if(hungerLevel >= 75) then {
+		if(hungerLevel <= 75 && hungerLevel > 50) then {
 			_foodICON = 75;
 		} else {
-			if(hungerLevel >= 50) then {
+			if(hungerLevel <= 50 && hungerLevel > 25) then {
 				_foodICON = 50;
 			} else {
-				if(hungerLevel >= 25) then {
+				if(hungerLevel <= 25 && hungerLevel > 0) then {
 					_foodICON = 25;
 				} else {
 					_foodICON = 0;
@@ -61,16 +61,16 @@ while {true} do
 		};
 	};
 	
-	if(thirstLevel >= 100) then {
+	if(thirstLevel <= 100 && thirstLevel > 75) then {
 		_waterICON = 100;
 	} else {
-		if(thirstLevel >= 75) then {
+		if(thirstLevel <= 75 && thirstLevel > 50) then {
 			_waterICON = 75;
 		} else {
-			if(thirstLevel >= 50) then {
+			if(thirstLevel <= 50 && thirstLevel > 25) then {
 				_waterICON = 50;
 			} else {
-				if(thirstLevel >= 25) then {
+				if(thirstLevel <= 25 && thirstLevel > 0) then {
 					_waterICON = 25;
 				} else {
 					_waterICON = 0;
@@ -80,9 +80,9 @@ while {true} do
 	};
 	
 	_vitals ctrlSetStructuredText parseText format ["
-	<img size='2.5' image='client\icons\blood\hp_%1.paa'/><br/>
-	<img size='2.5' image='client\icons\food\fd_%2.paa'/><br/>
-	<img size='2.5' image='client\icons\water\trs_%3.paa'/><br/>
+	<img size='2.5' image='client\icons\blood\hp_%1.paa'/><br/><br/>
+	<img size='2.5' image='client\icons\food\fd_%2.paa'/><br/><br/>
+	<img size='2.5' image='client\icons\water\trs_%3.paa'/><br/><br/>
 	", _healthICON, _foodICON, _waterICON];
 	
     _vitals ctrlCommit 0;

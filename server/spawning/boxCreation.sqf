@@ -27,6 +27,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["M16A2",4];
 		_currBox addWeaponCargoGlobal ["M9",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["15Rnd_9x19_M9",24];
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",50];
@@ -47,6 +52,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["M1014",4];
 		_currBox addWeaponCargoGlobal ["M9",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["15Rnd_9x19_M9",24];
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",25];
@@ -69,6 +79,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["AKS_74_U",4];
 		_currBox addWeaponCargoGlobal ["MakarovSD",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_545x39_AK",50];
         _currBox addMagazineCargoGlobal ["8Rnd_9x18_MakarovSD",24];
@@ -89,6 +104,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["Saiga12K",4];
 		_currBox addWeaponCargoGlobal ["Makarov",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_545x39_AK",15];
         _currBox addMagazineCargoGlobal ["30Rnd_762x39_AK47",35];
@@ -110,6 +130,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["G36a",2];
 		_currBox addWeaponCargoGlobal ["M9",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_G36",40];
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_G36SD",30];
@@ -129,6 +154,11 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["AA12_PMC",3];
 		_currBox addWeaponCargoGlobal ["M9",8];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",50];
         _currBox addMagazineCargoGlobal ["20Rnd_B_AA12_Pellets",25];
@@ -152,6 +182,11 @@ switch(_selectedBox) do {
         _currBox addWeaponCargoGlobal ["m8_sharpshooter",4];
 		_currBox addWeaponCargoGlobal ["M9SD",4];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",25];
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_StanagSD",25];
@@ -165,12 +200,17 @@ switch(_selectedBox) do {
 		clearWeaponCargoGlobal _currBox;
         
         // Add new weapons before ammunition
-        _currBox addWeaponCargoGlobal ["BAF_L85A2_RIS_CWS",2];
+        _currBox addWeaponCargoGlobal ["BAF_L85A2_RIS_SUSAT",2];
 		_currBox addWeaponCargoGlobal ["BAF_L86A2_ACOG",2];
 		_currBox addWeaponCargoGlobal ["BAF_L85A2_UGL_Holo",2];
         _currBox addWeaponCargoGlobal ["BAF_LRR_scoped",1];
 		_currBox addWeaponCargoGlobal ["M9",4];	
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_Stanag",50];
         _currBox addMagazineCargoGlobal ["5Rnd_86x70_L115A1",8];
@@ -193,7 +233,13 @@ switch(_selectedBox) do {
         _currBox addWeaponCargoGlobal ["VSS_Vintorez",1];
 		_currBox addWeaponCargoGlobal ["revolver_EP1",6];	 
         _currBox addWeaponCargoGlobal ["revolver_gold_EP1",2];
+        _currBox addWeaponCargoGlobal ["Sa61_EP1",5];
         
+		// Add Nv, Binoculars, RangeFinders
+		_currBox addWeaponCargoGlobal ["Binocular_Vector",1];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
+		
         // Add ammunition
         _currBox addMagazineCargoGlobal ["30Rnd_762x39_AK47",50];
         _currBox addMagazineCargoGlobal ["6Rnd_45ACP",24];
@@ -201,5 +247,6 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal ["20Rnd_762x51_FNFAL",35];
         _currBox addMagazineCargoGlobal ["10x_303",50];
         _currBox addMagazineCargoGlobal ["10Rnd_9x39_SP5_VSS",10];
+        _currBox addMagazineCargoGlobal ["20Rnd_B_765x17_Ball",20];
     };
 };

@@ -80,7 +80,10 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		};
 	    case 2: //Slay
 	    {
-			_target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1; Endmission ""END1"";failMission ""END1"";forceEnd; deletevehicle player;};",name _target];
+			_target setVehicleInit format["if (name player == ""%1"") then {
+				player setdamage 1; 
+				deletevehicle player;
+			};",name _target];
 			processInitCommands;
 			clearVehicleInit _target;
 	    };

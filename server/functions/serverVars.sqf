@@ -100,7 +100,7 @@ objectList = ["Land_Barrel_water",
 				"Land_prebehlavka",
 				"Land_leseni2x",
                 "Fort_Crate_wood",
-                "Land_CamoNet_NATO",
+					"Land_CamoNet_NATO",
 				"Land_Barrel_water",
 				"Land_stand_small_EP1",
                 "Land_stand_small_EP1",
@@ -111,7 +111,7 @@ objectList = ["Land_Barrel_water",
                 "Base_WarfareBBarrier10x",
                 "Base_WarfareBBarrier5x",
 				"Land_Misc_deerstand",
-				"Fort_Barricade",
+					"Fort_Barricade",
 				"Concrete_Wall_EP1",
                 "Concrete_Wall_EP1",
                 "Land_fort_bagfence_long",
@@ -140,7 +140,14 @@ objectList = ["Land_Barrel_water",
                 "Land_Campfire_burning",
                 "Land_GuardShed",
                 "Land_tent_east",
-				"Land_ConcreteBlock"];
+				"Land_ConcreteBlock",
+				//Added by Zuen
+				
+				"Hhedgehog_concrete",
+				"Land_WoodenRamp",
+				"Misc_Cargo1Bo_military"
+				
+				];
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
@@ -157,7 +164,8 @@ staticHeliList = ["UH1H_TK_GUE_EP1",
                 "AH6X_EP1"];
 
 //Random Weapon List - Change this to what you want to spawn in cars.
-vehicleWeapons = ["AK_107_GL_kobra",
+vehicleWeapons = [
+				"AK_107_GL_kobra",
 				"AK_107_kobra",
 				"AK_47_M",
 				"AK_47_S",
@@ -169,6 +177,7 @@ vehicleWeapons = ["AK_107_GL_kobra",
 				"BAF_L85A2_RIS_ACOG",
 				"BAF_L85A2_UGL_Holo",
 				"BAF_L86A2_ACOG",
+				"BAF_AS50_scoped",
 				"bizon",
 				"bizon_silenced",
 				"FN_FAL",
@@ -194,7 +203,8 @@ vehicleWeapons = ["AK_107_GL_kobra",
 				"Sa58V_CCO_EP1",
 				"Saiga12K",
 				"SCAR_H_CQC_CCO",
-				"SCAR_L_CQC"];
+				"SCAR_L_CQC"
+				];
                 
 blacklist = ["Land_stand_small_EP1",
 		"Land_stand_meat_EP1",

@@ -15,8 +15,8 @@ clearWeaponCargoGlobal _crate;
 
 _crate addWeaponCargoGlobal ["M4A1_AIM_SD_CAMO",2];
 _crate addWeaponCargoGlobal ["M4A1_HWS_GL_CAMO",2];
-_crate addWeaponCargoGlobal ["DMR",2];
-_crate addWeaponCargoGlobal ["M24",2];
+_crate addWeaponCargoGlobal ["DMR",3];
+_crate addWeaponCargoGlobal ["M24",3];
 _crate addWeaponCargoGlobal ["M9",2];
 _crate addWeaponCargoGlobal ["M9SD",2];
 _crate addWeaponCargoGlobal ["MakarovSD",2];

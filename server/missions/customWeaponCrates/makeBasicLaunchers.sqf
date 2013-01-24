@@ -13,9 +13,14 @@ _crate = _this select 0;
 clearMagazineCargoGlobal _crate;
 clearWeaponCargoGlobal _crate;
 
-_crate addWeaponCargoGlobal ["RPG7V",2];
-_crate addWeaponCargoGlobal ["SMAW",2];
+_crate addWeaponCargoGlobal ["RPG7V",3];
+_crate addWeaponCargoGlobal ["SMAW",3];
 _crate addWeaponCargoGlobal ["M79_EP1",3];
+
+// Add Nv, Binoculars, RangeFinders
+_crate addWeaponCargoGlobal ["Binocular_Vector",1];
+_crate addWeaponCargoGlobal ["NVGoggles",5];
+_crate addWeaponCargoGlobal ["Binocular",5];
 
 _crate addMagazineCargoGlobal ["1Rnd_HE_M203",25];
 _crate addMagazineCargoGlobal ["PG7V",10];

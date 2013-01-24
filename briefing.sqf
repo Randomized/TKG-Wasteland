@@ -198,12 +198,31 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"1.6 (TKG)",
+"1.7 (TKG)",
 "
 <br/>
 		[Added] - Paycheck system to gain more money overtime.<br/>
 		[Removed] - Show enemy locations in towns when there is no friendlies in the town.<br/>
 		[Fixed] - Show independants in your group as friendly in towns.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.8 (TKG)",
+"
+<br/>
+		[Changed] - Enemies won't show up in Gun store on the map.<br/>
+		[Changed] - Enemies won't show up in General store on the map.<br/>
+		[Removed] - 404Wasteland body delete script. We have our own in place.<br/>
+		[Fixed] - Animation when eating or drinking.<br/>
+		[Fixed] - When killing a player. he won't be kicked from the server.<br/>
+		[Fixed] - Returns 75% of money back when selling a weapon.<br/>
+		[Fixed] - Icosn now display properly based on value of blood,food and water.<br/>
+		[Added] - Few more objects to spawn.<br/>
+		[Added] - Binoculars, Range Finders and Nightvision now spawns in each weapon crate.<br/>
+		[Added] - The official TKG blood,food,water icons for the UI.<br/>
 "
 ]
 ];

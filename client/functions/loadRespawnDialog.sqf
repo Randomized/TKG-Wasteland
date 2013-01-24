@@ -135,7 +135,7 @@ while {respawnDialogActive} do
                         if(_onTeam) then {
                             if((getPos _x distance _centrePos) < 100) then {
                                 if(!(side _x == playerSide)) then {
-                                    _enemyCount = _enemyCount + 1; 
+                                    _enemyCount = _enemyCount + 1;
                                 };   
                             }; 
                         };  

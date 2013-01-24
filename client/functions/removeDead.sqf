@@ -1,3 +1,4 @@
+/*
 private["_corpse","_startTime","_result","_currTime"];
 
 _corpse  = _this select 0;
@@ -11,3 +12,4 @@ waitUntil
 };
 
 deleteVehicle _corpse;
+*/
