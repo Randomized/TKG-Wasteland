@@ -67,7 +67,7 @@ class PlayersMenu
 	{
 		idc=-1;
 		text="Kick";
-		action="[0] execVM ""client\systems\adminPanel\playerSelect.sqf"";";
+		action="[0] execVM ""client\systems\adminPanel\actions\playerSelect.sqf"";";
 		x=0.75;
 		y=0.44;
 		w=0.15;
@@ -77,7 +77,7 @@ class PlayersMenu
 	{
 		idc=19001;
 		text="Cam";
-		action="[1] execVM ""client\systems\adminPanel\playerSelect.sqf"";";
+		action="[1] execVM ""client\systems\adminPanel\actions\playerSelect.sqf"";";
 		x=0.92;
 		y=0.44;
 		w=0.15;
@@ -87,7 +87,7 @@ class PlayersMenu
 	{
 		idc=-1;
 		text="Warn";
-		action="[2] execVM ""client\systems\adminPanel\playerSelect.sqf"";";
+		action="[2] execVM ""client\systems\adminPanel\actions\playerSelect.sqf"";";
 		x=1.10;
 		y=0.44;
 		w=0.15;

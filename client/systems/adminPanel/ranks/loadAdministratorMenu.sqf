@@ -8,8 +8,10 @@
 disableSerialization;
 
 private ["_start","_panelOptions","_adminSelect","_displayAdmin"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+
+if ((_uid in Administrator)) then {
 	_start = createDialog "AdminMenu";
 
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
@@ -17,7 +19,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 	_panelOptions = ["Player Menu",
 					"Vehicle Management",
-					"Tags"
+					"Tags",
+					"Teleport",
+	                "Money",
+	                "Debug Menu",
+					"Access Proving Grounds"
 	];
 
 	{

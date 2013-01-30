@@ -227,6 +227,22 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.9 (TKG)",
+"
+<br/>
+		[Fixed] - You can now sell your gun in the gun store.<br/>
+		[Added] - Now shows who drove over you.<br/>
+		[Changed] - New admin panel has been set up.<br/>
+		[Fixed] - Shows proper money value when selling your weapon.<br/>
+		[Changed] - Selling starter weapons only give you 25 bucks.<br/>
+		[Fixed] - Selling weapons not in the gun store list give you 100 bucks.<br/>
+		[Added] - Advertise system has been added. Shows an advert ever 30 min.<br/>
+"
+]
+];
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",

@@ -28,7 +28,7 @@ switch _key do
     //U key
     case 22:
     {
-		execVM "client\systems\adminPanel\checkAdmin.sqf";
+		execVM "client\systems\adminPanel\1_CheckAdminLevel.sqf";
     };
     
     //tilde

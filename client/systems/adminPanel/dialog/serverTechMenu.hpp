@@ -44,7 +44,7 @@ class ServerTechMenu
 		{
 			idc=-1;
 			text="Select";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\optionSelect.sqf'";
+			onButtonClick = "[4] execVM 'client\systems\adminPanel\2_OptionSelect.sqf'";
 			x=0.40;
 			y=0.74;
 			w=0.22;

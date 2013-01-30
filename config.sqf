@@ -45,6 +45,14 @@ weaponsArray = [
 		
 ];
 
+//Starting weapon list
+startWeaponArray = [
+	["Revolver","revolver_gold_EP1"],
+	["M1911","Colt1911"],
+	["Makarov","Makarov"],
+	["G17","glock17_EP1"]
+];
+
 //Gun Store Ammo List
 //Text name, classname, buy cost
 ammoArray = [

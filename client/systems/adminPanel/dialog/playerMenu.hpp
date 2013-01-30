@@ -130,7 +130,7 @@ class PlayersMenu
 		{
 			idc = playerMenuSpectateButton;
 			text = "Spectate";
-			onButtonClick = "[0] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[0] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.2 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -141,7 +141,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Warn";
-			onButtonClick = "[1] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[1] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.535 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -152,7 +152,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Slay";
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[2] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.2625 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -164,7 +164,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock Team Switch";
-			onButtonClick = "[3] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[3] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.325 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.1 * safezoneW;
@@ -176,7 +176,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock Team Kill";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[4] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.4375 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.0875 * safezoneW;

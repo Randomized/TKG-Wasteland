@@ -14,8 +14,11 @@
 disableSerialization;
 
 private ["_start","_dialog","_vehicleCountText","_vehicleType","_vehicleCount","_uid","_vehicleCivBtn","_vehicleHeliBtn","_vehiclePlaneBtn","_vehicleTankBtn"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+
+if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then {
+
 	_start = createDialog "VehicleManagement";
 
 	_dialog = findDisplay vehicleManagementDialog;

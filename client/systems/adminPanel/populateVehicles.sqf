@@ -14,8 +14,11 @@
 disableSerialization;
 
 private ["_switch","_vehicleType","_vehicleSummary","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+
+if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then {
+
 	_switch = _this select 0;
 	_allVehicles = vehicles;
 

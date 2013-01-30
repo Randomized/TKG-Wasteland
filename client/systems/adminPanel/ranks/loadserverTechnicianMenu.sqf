@@ -12,7 +12,7 @@ private ["_start","_panelOptions","_displayServerTech","_serverTechSelect"];
 
 _uid = getPlayerUID player;
 
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+if ((_uid in Technician)) then {
 
 	_start = createDialog "ServerTechMenu";
 

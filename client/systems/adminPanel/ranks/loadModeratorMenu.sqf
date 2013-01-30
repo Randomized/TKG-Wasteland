@@ -8,8 +8,10 @@
 disableSerialization;
 
 private ["_start","_panelOptions","_displayMod","_modSelect"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+
+if ((_uid in Moderator)) then {
 	_start = createDialog "ModMenu";
 
 	_displayMod = uiNamespace getVariable "ModMenu";

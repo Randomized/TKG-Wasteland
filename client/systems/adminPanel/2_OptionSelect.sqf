@@ -19,7 +19,8 @@ private [
 
 _uid = getPlayerUID player;
 
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then {
+hint "tech guys";
 	_panelType = _this select 0;
 
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
@@ -36,19 +37,19 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 
 	switch (_panelType) do
 	{
-	    case 0: //Moderator panel
+		case 0: //Moderator panel
 		{
 			switch (lbCurSel _modSelect) do
 			{
 			    case 0: //Player Menu
 				{
 	                closeDialog 0;
-					execVM "client\systems\adminPanel\playerMenu.sqf";
+					execVM "client\systems\adminPanel\actions\playerMenu.sqf";
 				};
 				case 1: //Basic Vehicle Menu
 				{
 					closeDialog 0;
-					execVM "client\systems\adminPanel\vehicleManagement.sqf";
+					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 				};
 			};
 		};
@@ -59,36 +60,16 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    case 0: //Player Menu
 				{
 	                closeDialog 0;
-					execVM "client\systems\adminPanel\playerMenu.sqf";
+					execVM "client\systems\adminPanel\actions\playerMenu.sqf";
 				};
 				case 1: //Full Vehicle Management
 				{
 	                closeDialog 0;
-					execVM "client\systems\adminPanel\vehicleManagement.sqf";
+					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 				};
 			    case 2: //Tags
 			    {
-					execVM "client\systems\adminPanel\playerTags.sqf";
-			    };
-			};
-		};
-	    case 2: //Server Administrator panel
-	    {
-			switch (lbCurSel _serverAdminSelect) do
-			{
-			    case 0: //Player Menu
-				{
-	                closeDialog 0;
-					execVM "client\systems\adminPanel\playerMenu.sqf";
-				};
-				case 1: //Full Vehicle Management
-				{
-	                closeDialog 0;
-					execVM "client\systems\adminPanel\vehicleManagement.sqf";
-				};
-			    case 2: //Tags
-			    {
-					execVM "client\systems\adminPanel\playerTags.sqf";
+					execVM "client\systems\adminPanel\actions\playerTags.sqf";
 			    };
 			    case 3: //Teleport
 			    {
@@ -103,7 +84,52 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	            case 5: //Debug Menu
 			    {   
 	            	closeDialog 0;   
-	                execVM "client\systems\adminPanel\loadDebugMenu.sqf";
+	                execVM "client\systems\adminPanel\actions\loadDebugMenu.sqf";
+			    };
+				case 6: //Access Proving Grounds
+			    {
+	                closeDialog 0;      
+					createDialog "balca_debug_main";
+			    };
+			};
+		};
+	    case 2: //Global Staff panel
+	    {
+			switch (lbCurSel _serverAdminSelect) do
+			{
+			    case 0: //Player Menu
+				{
+	                closeDialog 0;
+					execVM "client\systems\adminPanel\actions\playerMenu.sqf";
+				};
+				case 1: //Full Vehicle Management
+				{
+	                closeDialog 0;
+					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
+				};
+			    case 2: //Tags
+			    {
+					execVM "client\systems\adminPanel\actions\playerTags.sqf";
+			    };
+			    case 3: //Teleport
+			    {
+	                closeDialog 0;    
+	                hint "Click on map to teleport";
+	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
+			    };
+	            case 4: //Money
+			    {      
+					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+			    };
+	            case 5: //Debug Menu
+			    {   
+	            	closeDialog 0;   
+	                execVM "client\systems\adminPanel\actions\loadDebugMenu.sqf";
+			    };
+				case 6: //Access Proving Grounds
+			    {
+	                closeDialog 0;      
+					createDialog "balca_debug_main";
 			    };
 			};
 	    };
@@ -151,15 +177,16 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    {
 			switch (lbCurSel _serverTechSelect) do
 			{
-			    case 0: //Player Menu
+			    hint "switch option choosen works";
+				case 0: //Player Menu
 				{
 	                closeDialog 0;
-					execVM "client\systems\adminPanel\playerMenu.sqf";
+					execVM "client\systems\adminPanel\actions\playerMenu.sqf";
 				};
 				case 1: //Full Vehicle Management
 				{
 	                closeDialog 0;
-					execVM "client\systems\adminPanel\vehicleManagement.sqf";
+					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 				};
 			    case 2: //Teleport
 			    {

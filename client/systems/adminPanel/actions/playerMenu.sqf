@@ -10,8 +10,11 @@
 disableSerialization;
 
 private ["_start","_dialog","_playerListBox","_decimalPlaces","_health","_namestr","_index","_punishCount","_side"];
+
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators) OR (_uid in serverTechnician)) then {
+
+if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then {
+
 	_start = createDialog "PlayersMenu";
 	_punishCount = 0;				
 	_dialog = findDisplay playerMenuDialog;
