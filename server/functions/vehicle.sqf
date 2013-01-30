@@ -51,7 +51,7 @@
   
 
 
-	
+
 Contact & Bugreport: harlechin@hotmail.com
 
 =========================================================
@@ -122,7 +122,7 @@ while {_run} do
 			if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
 			if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
 			sleep 0.1;
-	
+
 			deleteVehicle _unit;
 			sleep 2;
             
@@ -137,6 +137,7 @@ while {_run} do
         _startTime = floor(time);
 		_result = 0;
     } else {
-    	sleep 1;
+    	sleep 5;
     };
+	sleep 1;
 };

@@ -243,6 +243,65 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.8",
+"
+<br/>
+		[Added] - When spawning on a spawn beacon, you come in via HALO jump.<br/>
+		[Added] - New store interaction system.<br/>
+		[Added] - Supply drop mission written by OCUK MarKeR and tweaked by 404Games.<br/>
+		[Added] - Lots of new mission spawn locations.<br/>
+		[Fixed] - Floating crates/objects sometimes appearing above Novy.<br/>
+		[Fixed] - AI Team defend script. Be careful, they now actually use their mounted weapons!<br/>
+		[Fixed] - Vehicles no longer spawn in silly places / silly angles.<br/>
+		[Fixed] - Not able to interact with stores sometimes.<br/>
+		[Fixed] - Outpost having overpowered weapons.<br/>
+		[Fixed] - Other misc fixes that have been mentioned on the forums, Thanks for your help!<br/>
+		[Improved] - Vehicle HUD to now show the players respective role within the vehicle.<br/>
+		[Improved] - Mission spawning system thanks to Kettlewell.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.8a",
+"
+<br/>
+		[Fixed] - AI getting into mission vehicles.<br/>
+		[Fixed] - Fixed some issues with missions.<br/>
+		[Fixed] - Added in some defines for missions to easily edit the times.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.9",
+"
+<br/>
+		[Added] - Most interactions now have a Cancel Action option.<br/>
+		[Fixed] - Abandoned Truck showing up as recon vehicle.<br/>
+		[Fixed] - Object lock now functions correctly.<br/>
+		[Fixed] - Spawn beacon, radar, object etc unlock/lock actions now stop on death.<br/>    
+		[Fixed] - The mission RPT errors.<br/>
+		[Fixed] - The vehicle count RPT error.<br/>
+		[Fixed] - mission_Outpost timeout.<br/>
+		[Changed] - Gun and General stores no longer have over-powered super radars.<br/>
+		[Changed] - Player now starts with only 1x food and water.<br/>
+		[Changed] - Added more variation to vehicle weapons spawns and removed OP weapons.<br/>
+		[Enhancement] - Refuel and Repair vehicle functions have been improved.<br/>
+		[Enhancement] - The mission RPT's to have more information to help with debuging.<br/>
+		[Enhancement] - Server startup optimizations.<br/>
+		[Enhancement] - General wasteland mission optimizations; many changes to improve performance.<br/>
+		[Enhancement] - Made some changes to defend area to make the AI more aware.<br/>
+		[Enhancement] - The mission system is now all pre compiled and steamlined to make it run smoother.<br/>
+		[Enhancement] - Mission will no longer run the same one twice.<br/>  
+"
+]
+];
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",

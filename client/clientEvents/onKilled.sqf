@@ -127,9 +127,6 @@ if((_player getVariable "repairkits") > 0) then {
 	};
 };
 
-publicVar_objectsToDelete = [_to_delete, _to_delete_quick];
-publicVariableServer "publicVar_objectsToDelete";
-
 true spawn {
 	waitUntil {playerRespawnTime < 2};
 	titleText ["", "BLACK OUT", 1];

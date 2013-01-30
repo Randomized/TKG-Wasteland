@@ -14,7 +14,7 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "v2.7";
+versionName = "v2.9";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -53,7 +53,7 @@ if(X_Server) then {
 //init 3rd Party Scripts
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_Ground\init.sqf";
-[0.1, 0.9, 1] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+[0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 
 [] execVM "addons\scripts\notherm\twsremove.sqf";
 [300,300] execVM "addons\scripts\cly_removedead\cly_removedead.sqf";

@@ -1,13 +1,13 @@
 #define icons_idc 46300
 
-    class ST_FTHud_Rsc
+    class FZF_ICHud_Rsc
     {
         idd = -1;
         movingEnable = 1;
         enableSimulation = 1;
         enableDisplay = 1;
 
-        onLoad = "_this call ST_FTHud_Load";
+        onLoad = "_this call FZF_ICHud_Load";
 
         duration = 99999999999999999;
         fadein  = 0;
@@ -27,7 +27,7 @@
 			colorBackground[] = {0,0,0,0};
 			colortext[] = {0,0,0,0.7};
 			text ="";
-		
+
             };
 		class PlayerIcon00:Icons {idc = icons_idc +  0;};
 		class PlayerIcon01:Icons {idc = icons_idc +  1;};
