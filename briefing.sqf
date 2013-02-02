@@ -1,4 +1,5 @@
-player createDiarySubject ["TKGaming.com", "TKGaming Information"];
+player createDiarySubject ["TKG_Wasteland_Rules", "Rules"];
+player createDiarySubject ["TKGaming.com", "Help Panel"];
 player createDiarySubject ["changelog", "Change Log"];
 player createDiarySubject ["wasteland", "What is Wasteland?"];
 
@@ -302,6 +303,18 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.9a",
+"
+<br/>
+		[Added] Rules on the objective log when opening map<br/>
+		[Changed] Added new Wasteland admins<br/>
+		[Changed] Some string clean-up<br/>
+"
+]
+];
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",
@@ -334,6 +347,48 @@ player createDiaryRecord["TKGaming.com",
 <br/>
 	There is a public Teamspeak 3 server available for players of this server.<br/><br/>
 	Teamspeak IP: 176.31.233.192<br/><br/>
+"
+]
+];
+
+player createDiaryRecord["TKG_Wasteland_Rules",
+[
+"Gun Store Rules",
+"
+<br/>
+	Do not shoot inside the Gun store area!<br/><br/>
+	Shooting from outside the Gun Store area into the Gun Store area will result in a 1 Day ban.<br/><br/>
+	Driving over people inside the Gun Store area will result in a 1 Day ban.<br/><br/>
+	Camping the gun store area and killing player right outside the 200m Gun Store area will result in a 1 Day ban.<br/><br/>
+	<br/>
+	System Warnings:<br/>
+	Warning 1: Deleting all your weapons.<br/>
+	Warning 2: Deleting all your weapons.<br/>
+	Warning 3: You will be kicked from the server.<br/>
+"
+]
+];
+
+player createDiaryRecord["TKG_Wasteland_Rules",
+[
+"Hacked Vehicles",
+"
+<br/>
+	Driving or flying in a hacked vehicle will result in a ban.<br/>
+	Playing with a friend that hacked will result in a ban as well.<br/>
+"
+]
+];
+
+player createDiaryRecord["TKG_Wasteland_Rules",
+[
+"What to do when banned",
+"
+<br/>
+	If you are banned from the server for whatever reason. You can make a ban appeal on the forums at TKGaming.com<br/><br/>
+	Explain the reason of the ban. Who banned you and on what server you are banned.<br/><br/>
+	Being rude in your appeal will result in us mking it a permanent ban on all servers. Respect us and we will respect you.<br/><br/>
+	For a faster response, join our TeamSpeak channel and talk to one of our Staff members. Being rude in TeamSpeak will result in a permanent ban.<br/><br/>
 "
 ]
 ];

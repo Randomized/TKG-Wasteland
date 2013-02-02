@@ -15,8 +15,7 @@ Donator = [];
 publicVariable "Donator";
 
 Moderator = [
-	"89607238",  //CombatMink
-	"49869702"	//Cookie
+	
 ];
 publicVariable "Moderator";
 
@@ -24,7 +23,9 @@ Administrator = [
 	"33485190", //Sutherdawg
 	"49046214", //Centinal
 	"63767942", //Randomized
-	"28875462" //Fuzzi
+	"28875462", //Fuzzi
+	"89607238",  //CombatMink
+	"49869702"	//Cookie
 ];
 publicVariable "Administrator";
 
