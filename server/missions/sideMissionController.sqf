@@ -3,10 +3,9 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 08/12/2012 15:19
 
-if(!isServer) exitWith {};
-
-#include "setup.sqf"
 #include "sideMissions\sideMissionDefines.sqf";
+
+if(!isServer) exitWith {};
 
 private ["_SMarray","_lastMission","_randomIndex","_mission","_missionType","_newMissionArray","_lastMission"];
 
@@ -30,9 +29,8 @@ while {true} do
 	//Select new mission if the same
     if(str(_missionType) == _lastMission) then
     {
-        _newMissionArray = _SMarray;
-        _newMissionArray set [_randomIndex, "REMOVETHISCRAP"];
-        _newMissionArray = _newMissionArray - ["REMOVETHISCRAP"];
+        _SMarray set [_randomIndex, "REMOVETHISCRAP"];
+        _newMissionArray = _SMarray - ["REMOVETHISCRAP"];
         _randomIndex = (random (count _newMissionArray - 1));
         _missionType = _newMissionArray select _randomIndex select 1;
         _mission = _newMissionArray select _randomIndex select 0;   

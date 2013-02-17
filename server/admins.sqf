@@ -30,7 +30,7 @@ Administrator = [
 publicVariable "Administrator";
 
 Technician = [
-//	"70627846"  //Zuen
+	"70627846"  //Zuen
 ];
 publicVariable "Technician";
 
