@@ -23,8 +23,8 @@ if ((_uid in Technician)) then {
 	_panelOptions = [
 		"Player Menu",
 		"Vehicle Management",
-		"Teleport",
-		"Money"
+		"Skip +6 Hours",
+		"Skip -6 Hours"
 	];
 
 	{

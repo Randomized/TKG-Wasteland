@@ -20,7 +20,7 @@ private [
 _uid = getPlayerUID player;
 
 if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then {
-hint "tech guys";
+
 	_panelType = _this select 0;
 
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
@@ -177,7 +177,6 @@ hint "tech guys";
 	    {
 			switch (lbCurSel _serverTechSelect) do
 			{
-			    hint "switch option choosen works";
 				case 0: //Player Menu
 				{
 	                closeDialog 0;
@@ -188,15 +187,17 @@ hint "tech guys";
 	                closeDialog 0;
 					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 				};
-			    case 2: //Teleport
+			    case 2: //6 hours Skip
 			    {
 	                closeDialog 0;    
-	                hint "Click on map to teleport";
-	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
+	                hint "Skipped 6 Hours";
+	                skipTime 6;
 			    };
-	            case 3: //Money
+	            case 3: //-6 hours Skip
 			    {      
-					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+					closeDialog 0;    
+	                hint "Went back 6 Hours";
+	                skipTime -6;
 			    };
 			};
 	    };
