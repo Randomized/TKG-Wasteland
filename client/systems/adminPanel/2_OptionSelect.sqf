@@ -81,12 +81,7 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 			    {      
 					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
 			    };
-	            case 5: //Debug Menu
-			    {   
-	            	closeDialog 0;   
-	                execVM "client\systems\adminPanel\actions\loadDebugMenu.sqf";
-			    };
-				case 6: //Access Proving Grounds
+				case 5: //Access Proving Grounds
 			    {
 	                closeDialog 0;      
 					createDialog "balca_debug_main";
@@ -193,11 +188,15 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 	                hint "Skipped 6 Hours";
 	                skipTime 6;
 			    };
-	            case 3: //-6 hours Skip
+				case 3: //Teleport
+			    {
+	                closeDialog 0;    
+	                hint "Click on map to teleport";
+	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
+			    };
+	            case 4: //Money
 			    {      
-					closeDialog 0;    
-	                hint "Went back 6 Hours";
-	                skipTime -6;
+					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
 			    };
 			};
 	    };
