@@ -8,7 +8,7 @@
 //Create and set the warning level to 0
 if(isNil {gsFireC}) then {gsFireC = 0};
  
-_radiusC = 200;																	//The radius from the Gun Stores
+_radiusC = 300;																	//The radius from the Gun Stores
 _gunStoresC = ["gs1", "gs2", "gs3", "gs4"];										//The Gun Stores Array
 
 {
