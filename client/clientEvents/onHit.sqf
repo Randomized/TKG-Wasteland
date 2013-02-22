@@ -4,6 +4,7 @@
 //	@file Created: 07/01/2013 14:30
 //	@file Args:
 
+/*
 _radiusH = 200;																	//The radius from the Gun Stores
 _gunStoresH = ["gs1", "gs2", "gs3", "gs4"];										//The Gun Stores Array
 
@@ -17,3 +18,4 @@ _gunStoresH = ["gs1", "gs2", "gs3", "gs4"];										//The Gun Stores Array
 	
 	};
 } forEach _gunStoresH;
+*/
