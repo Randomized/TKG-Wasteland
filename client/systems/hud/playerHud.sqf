@@ -163,9 +163,9 @@ while {true} do
 	};
 	
 	_vitals ctrlSetStructuredText parseText format ["
-	<img size='2.5' image='client\icons\blood\hp_%1.paa'/><br/><br/>
-	<img size='2.5' image='client\icons\food\fd_%2.paa'/><br/><br/>
-	<img size='2.5' image='client\icons\water\trs_%3.paa'/><br/><br/>
+	<img size='1.8' image='client\icons\blood\hp_%1.paa'/><br/><br/>
+	<img size='1.8' image='client\icons\food\fd_%2.paa'/><br/><br/>
+	<img size='1.8' image='client\icons\water\trs_%3.paa'/><br/><br/>
 	", _healthICON, _foodICON, _waterICON];
 	
     _vitals ctrlCommit 0;
