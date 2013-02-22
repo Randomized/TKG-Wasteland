@@ -9,11 +9,11 @@ _addMoney = 50;
 
 while {true} do
 {
-	sleep 600; //600 for 10min
+	sleep 1200; //600 for 10min
 	
 	_playerMoney = player getVariable "cmoney";
 	
 	player setVariable["cmoney",_playerMoney + _addMoney,false];
 	
-	hint format["%1 money has been added to your account. You now have %2.", _addMoney, (player getVariable "cmoney")];
+	hint format["$%1 has been added to your bank account. You now have %2.", _addMoney, (player getVariable "cmoney")];
 };
