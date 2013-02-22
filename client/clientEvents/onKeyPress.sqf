@@ -35,7 +35,16 @@ switch _key do
         [] call loadPlayerMenu;
     };
 	
-	 //E key
+	//Y key
+	case 21:
+    {
+		if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_uid in GlobalStaff)) then 
+		{
+			createDialog "balca_debug_main";
+		};
+    };
+	
+	//E key
 	case 18:
     {
     	if (dialog) exitwith { closeDialog 0; }; // Check a current dialog is not already active.
