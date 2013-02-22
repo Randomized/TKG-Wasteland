@@ -22,7 +22,6 @@ if ((_uid in Administrator)) then {
 					"Tags",
 					"Teleport",
 	                "Money",
-	                "Debug Menu",
 					"Access Proving Grounds"
 	];
 

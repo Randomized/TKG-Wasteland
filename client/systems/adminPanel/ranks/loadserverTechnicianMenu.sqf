@@ -24,7 +24,8 @@ if ((_uid in Technician)) then {
 		"Player Menu",
 		"Vehicle Management",
 		"Skip +6 Hours",
-		"Skip -6 Hours"
+		"Teleport",
+		"Add Money"
 	];
 
 	{
