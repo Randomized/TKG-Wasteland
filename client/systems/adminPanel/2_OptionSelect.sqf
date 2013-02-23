@@ -1,6 +1,6 @@
 //	@file Version: 1.0
 //	@file Name: optionSelect.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, [TKG] Zuen
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -196,7 +196,9 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 			    };
 	            case 4: //Money
 			    {      
-					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+					//player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+					closeDialog 0;
+					execVM "client\systems\adminPanel\actions\reloadAllVehicles.sqf";
 			    };
 			};
 	    };
