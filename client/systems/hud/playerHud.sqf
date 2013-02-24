@@ -163,18 +163,18 @@ while {true} do
 	};
 	
 	_vitals ctrlSetStructuredText parseText format ["
-	<img size='1.8' image='client\icons\blood\hp_%1.paa'/><br/><br/>
-	<img size='1.8' image='client\icons\food\fd_%2.paa'/><br/><br/>
-	<img size='1.8' image='client\icons\water\trs_%3.paa'/><br/><br/>
+	<img size='2' image='client\icons\blood\hp_%1.paa'/><br/><br/>
+	<img size='2' image='client\icons\food\fd_%2.paa'/><br/><br/>
+	<img size='2' image='client\icons\water\trs_%3.paa'/><br/><br/>
 	", _healthICON, _foodICON, _waterICON];
 	
     _vitals ctrlCommit 0;
      
-/*
+
     if(player != vehicle player) then
     {
         _tempString = "";
-        _yOffset = 0.24;
+        _yOffset = 0.40;
         _vehicle = assignedVehicle player;
 
         {
@@ -204,6 +204,6 @@ while {true} do
         _hudVehicle ctrlSetPosition [_x, _y, 0.4, 0.65];
         _hudVehicle ctrlCommit 0;
     };
-*/
+
     sleep 1;
 };
