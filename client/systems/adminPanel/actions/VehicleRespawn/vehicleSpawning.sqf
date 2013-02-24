@@ -7,6 +7,7 @@
 private ["_counter","_pos","_type","_num","_markerName","_marker","_amountOfVehicles","_hint"];
 
 _counter = 0;
+_RespawnVehicDone = false;
 
 for "_i" from 1 to 450 do
 {
@@ -19,4 +20,10 @@ for "_i" from 1 to 450 do
 	[_pos, _type] call vehicleCreation;
 
 	_counter = _counter + 1;
+	
+	if(_i >= 449) {
+		_RespawnVehicDone = true;
+	};
 };
+
+if(_RespawnVehicDone) { hint "WASTELAND SERVER - Vehicles Spawned"; };
