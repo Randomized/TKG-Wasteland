@@ -204,6 +204,11 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 					closeDialog 0;
 					execVM "client\systems\adminPanel\actions\reloadAllVehicles.sqf";
 				};
+				case 6: //Access Proving Grounds
+			    {
+	                closeDialog 0;      
+					createDialog "balca_debug_main";
+			    };
 			};
 	    };
 	};

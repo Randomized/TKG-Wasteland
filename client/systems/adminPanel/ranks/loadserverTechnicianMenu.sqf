@@ -26,7 +26,8 @@ if ((_uid in Technician)) then {
 		"Skip +6 Hours",
 		"Teleport",
 		"Add Money",
-		"Respawn Vehicles"
+		"Respawn Vehicles",
+		"Proving Grounds"
 	];
 
 	{
