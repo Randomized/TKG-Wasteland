@@ -4,15 +4,8 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-// ///////////////////////
-// // Hellop Vars Added //
-// ///////////////////////
-_tmpVeh = _tmpArr select 0;
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
-
-_tmpArr = nearestObjects [_player, ["LandVehicle"], 6];  //Execute this ASAP.
-
 if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
 
 PlayerCDeath = [_player];
@@ -21,71 +14,31 @@ if (isServer) then {
 	_id = PlayerCDeath spawn serverPlayerDied; 
 };
 
-_pos = getPosATL player;
-
 if(!local _player) exitwith {};
-
-// ///////////////
-// //// BEGIN ////
-// ///////////////
-// Author: hellop
-// Now we add a script to detect who killed the player by vehicle
-
-//Dunno who killed
-if ((isNull _killer)) then {
-        player globalchat format["%1 died mysteriously.", name (_player)];
-} else {
-	//_killer Not null 
-	if (_killer == _player) then {
-			_arrSize = count _tmpArr;
-			if (_arrSize > 0) then {
-					for [{_x=0},{_x<_arrSize},{_x=_x+1}] do {
-							_killer = driver (_tmpArr select _x);
-							if (isPlayer _killer) then {_x = _arrSize};  //break from for loop
-					};
-			};
-			//Didn't find a driver
-			if ((isNull _killer) or (_killer == _player)) then {
-					MessageText = format["%1 died mysteriously.", name (_player)];
-			}
-			else {
-					MessageText = format["%1 was run over by %2.", name (_player), name (_killer)];
-			};
-	};
-	
-	saycode = format ['globalchat ["%1", "PLAIN"];', MessageText];
-	player setVehicleInit saycode;
-	processInitCommands;
-	clearVehicleInit player;
-	saycode = nil;
-};
-_player removeAllEventHandlers "killed";
-
-// ///////////////
-// ///// END /////
-// ///////////////
 
 // Create a script which checks where your location was and the enemies position is.
 _radiusOK = 300;																	//The radius from the Gun Stores
 _gunStoresOK = ["gs1", "gs2", "gs3", "gs4"];										//The Gun Stores Array
 
-{
-	_unitOK = missionNamespace getVariable (_gunStoresOK select _forEachIndex);	//Getting the values of each Gun Store from the mission.sqm file
-	
-	if(player distance _unitOK <= _radiusOK) then {								//If the player is in the Gun Store radius
-	
-		_killer setDamage 1;
+if (_player != _killer) then {
+	{
+		_unitOK = missionNamespace getVariable (_gunStoresOK select _forEachIndex);	//Getting the values of each Gun Store from the mission.sqm file
 		
-		MessageText = format["%2 was killed for killing players in the gun store.", name (_killer)];
-		saycode = format ['globalchat ["%1", "PLAIN"];', MessageText];
-		player setVehicleInit saycode;
-		processInitCommands;
-		clearVehicleInit player;
-		saycode = nil;
-	
-	};
-} forEach _gunStoresOK;
-
+		if(player distance _unitOK <= _radiusOK) then {								//If the player is in the Gun Store radius
+		
+			_killer setDamage 1;
+			deletevehicle _killer;
+			
+			MessageText = format["%1 was killed for killing players in the gun store.", name (_killer)];
+			saycode = format ['titleText ["%1", "PLAIN"];', MessageText];
+			player setVehicleInit saycode;
+			processInitCommands;
+			clearVehicleInit player;
+			saycode = nil;
+		
+		};
+	} forEach _gunStoresOK;
+};
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
@@ -131,7 +84,7 @@ if(!isNull(pvar_PlayerTeamKiller)) then {
 	publicVariable "publicVar_teamkillMessage";
 };
 
-private["_a","_b","_c","_d","_e","_f","_m","_to_delete"];
+private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
@@ -175,7 +128,7 @@ if((_player getVariable "water") > 0) then {
 };
 
 if((_player getVariable "fuelFull") > 0) then {
-	for "_d" from 1 to (_player getVariable "fuelFull") do {	
+	for "_e" from 1 to (_player getVariable "fuelFull") do {	
 		player setVariable["fuelFull",(player getVariable "fuelFull")-1,true];
 		_temp3 = "Fuel_can" createVehicle (position player);
 		_temp3 setVariable["fuel", true, true];
