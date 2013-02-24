@@ -196,10 +196,14 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 			    };
 	            case 4: //Money
 			    {      
-					//player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+					closeDialog 0;
+					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
+			    };
+				case 5:// Reload all Vehicles
+				{
 					closeDialog 0;
 					execVM "client\systems\adminPanel\actions\reloadAllVehicles.sqf";
-			    };
+				};
 			};
 	    };
 	};
