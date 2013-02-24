@@ -36,7 +36,7 @@ if ((isNull _killer)) then {
         player globalchat format["%1 died mysteriously.", name (_player)];
 } else {
 	//_killer Not null 
-	if (_killer == _player) then {	
+	if (_killer == _player) then {
 			_arrSize = count _tmpArr;
 			if (_arrSize > 0) then {
 					for [{_x=0},{_x<_arrSize},{_x=_x+1}] do {
@@ -46,18 +46,46 @@ if ((isNull _killer)) then {
 			};
 			//Didn't find a driver
 			if ((isNull _killer) or (_killer == _player)) then {
-					player globalchat format["%1 died mysteriously.", name (_player)];
+					MessageText = format["%1 died mysteriously.", name (_player)];
 			}
 			else {
-					player globalchat format["%1 was run over by %2.", name (_player), name (_killer)];		
+					MessageText = format["%1 was run over by %2.", name (_player), name (_killer)];
 			};
 	};
+	
+	saycode = format ['globalchat ["%1", "PLAIN"];', MessageText];
+	player setVehicleInit saycode;
+	processInitCommands;
+	clearVehicleInit player;
+	saycode = nil;
 };
 _player removeAllEventHandlers "killed";
 
 // ///////////////
 // ///// END /////
 // ///////////////
+
+// Create a script which checks where your location was and the enemies position is.
+_radiusOK = 300;																	//The radius from the Gun Stores
+_gunStoresOK = ["gs1", "gs2", "gs3", "gs4"];										//The Gun Stores Array
+
+{
+	_unitOK = missionNamespace getVariable (_gunStoresOK select _forEachIndex);	//Getting the values of each Gun Store from the mission.sqm file
+	
+	if(player distance _unitOK <= _radiusOK) then {								//If the player is in the Gun Store radius
+	
+		_killer setDamage 1;
+		
+		MessageText = format["%2 was killed for killing players in the gun store.", name (_killer)];
+		saycode = format ['globalchat ["%1", "PLAIN"];', MessageText];
+		player setVehicleInit saycode;
+		processInitCommands;
+		clearVehicleInit player;
+		saycode = nil;
+	
+	};
+} forEach _gunStoresOK;
+
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
