@@ -61,10 +61,10 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 						case 3: {detach _camadm; _camadm attachTo [(vehicle _target), [-10,0,2]]; _camadm setDir 90; _camadm setVectorUp [0, 1, 5];};
 						case 4: {detach _camadm; _camadm attachTo [(vehicle _target), [10,0,2]]; _camadm setDir -90; _camadm setVectorUp [0, 1, -5];};                                                                        
 					};
-					player commandchat "Viewing cam " + str(_rnum) + " on " + str(name vehicle _target);
-					_rnum = _rnum + 1;
-					if (_rnum > 4) then {_rnum = 0;};
-					sleep 5;
+					//player commandchat "Viewing cam " + str(_rnum) + " on " + str(name vehicle _target);
+					//_rnum = _rnum + 1;
+					//if (_rnum > 4) then {_rnum = 0;};
+					//sleep 5;
 				};
 			} else {
 				_spectateButton ctrlSetText "Spectate";
@@ -73,13 +73,15 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 				camDestroy _camadm;
 			};
 		};
-		case 1: //Warn
+		case 1: //Go To Player
 		{
-			_warnText = ctrlText _warnMessage;
-	        _playerName = name player;
-			_target setVehicleInit format["if (name player == ""%2"") then {titleText [""Admin %2: %1"", ""plain""]; titleFadeOut 10;};",_warnText,name _target,_playerName];
-	        processInitCommands;
-	        clearVehicleInit _target;
+			hint format["Go To Player: %1", name _target];
+			vehicle player setPos (getPos _target);
+		};
+		case 5: //Teleport Player
+		{
+			hint format["Player Teleported: %1", name _target];
+			vehicle _target setPos (getPos player);
 		};
 	    case 2: //Slay
 	    {

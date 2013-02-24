@@ -107,15 +107,6 @@ class PlayersMenu
 	
 	class controls {
 
-		class PlayerEditBox:w_RscEdit
-		{
-			idc=playerMenuWarnMessage;
-			x = 0.60 * safezoneW + safezoneX;
-			y = 0.745 * safezoneH + safezoneY;
-			w = 0.175 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-
 		class PlayerListBox: w_RscListbox
 		{
 			idc = playerMenuPlayerList;
@@ -133,14 +124,14 @@ class PlayersMenu
 			onButtonClick = "[0] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.2 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
+			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 
 		class WarnButton: w_RscButton
 		{
 			idc = -1;
-			text = "Warn";
+			text = "Go TP";
 			onButtonClick = "[1] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.535 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
@@ -163,7 +154,7 @@ class PlayersMenu
 		class UnlockTeamSwitchButton: w_RscButton
 		{
 			idc = -1;
-			text = "Unlock Team Switch";
+			text = "Unlock TSwitch";
 			onButtonClick = "[3] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.325 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
@@ -175,13 +166,24 @@ class PlayersMenu
 		class UnlockTeamKillerButton: w_RscButton
 		{
 			idc = -1;
-			text = "Unlock Team Kill";
+			text = "Unlock TKill";
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.4375 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.0875 * safezoneW;
 			h = 0.04 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
+		};
+		
+		class PlayerEditBox:w_RscButton
+		{
+			idc = -1;
+			text = "TP Player";
+			onButtonClick = "[5] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			x = 0.60 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 	};
 };

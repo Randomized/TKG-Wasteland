@@ -1,6 +1,6 @@
 //	@file Version: 1.0
 //	@file Name: playerMenu.sqf
-//	@file Author: [404] Deadbeat
+//	@file Author: [404] Deadbeat, [TKG] Zuen
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
@@ -21,10 +21,36 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 	_playerListBox = _dialog displayCtrl playerMenuPlayerList;
 
 	{
-		{if((_x select 0) == (getPlayerUID player)) then {_punishCount = _x select 1;};}forEach pvar_teamKillList;
-	    if(str(playerSide) in ["WEST"] OR str(playerSide) in ["EAST"]) then {if(str(playerSide) in ["WEST"]) then {_side = "Blufor";} else {_side = "Opfor";};} else {_side = "Independent";};
-		_namestr = name(_x) + " [UID:" + getplayerUID(_x) + "] [Side:" + format["%1",_side] + "] [Vehicle:" + Format["%1",typeOf(vehicle _x)] + "] [Speed:" + format["%1",round(speed (vehicle _x))] + "] [Weap:" + format["%1",currentWeapon (vehicle _x)] + "] [Punish Count:" + format["%1",_punishCount]+ "]";             
+		{
+			if((_x select 0) == (getPlayerUID player)) then {
+				_punishCount = _x select 1;
+			};
+		}forEach pvar_teamKillList;
+	    
+		if(str(playerSide) in ["WEST"] OR str(playerSide) in ["EAST"]) then {
+			if(str(playerSide) in ["WEST"]) then {
+				_side = "Blufor";
+			} else {
+				_side = "Opfor";
+			};
+		} else {
+			_side = "Independent";
+		};
+		
+		_namestr = name(_x) + " [" + getplayerUID(_x) + "] : Side - " + format["%1",_side] + " : Weapon - " + format["%1",currentWeapon (vehicle _x)] + " : Vehicle - " + format["%1",typeOf(vehicle _x)];
+		
+		/*
+		_namestr = name(_x) + " 
+		[UID:" + getplayerUID(_x) + "] 
+		[Side:" + format["%1",_side] + "] 
+		[Vehicle:" + Format["%1",typeOf(vehicle _x)] + "] 
+		[Speed:" + format["%1",round(speed (vehicle _x))] + "] 
+		[Weap:" + format["%1",currentWeapon (vehicle _x)] + "] 
+		[Punish Count:" + format["%1",_punishCount]+ "]";
+		*/
+		
 		_index = _playerListBox lbAdd _namestr;
+		
 		_playerListBox lbSetData [_index, str(_x)];   
 	} forEach playableUnits;
 } else {
