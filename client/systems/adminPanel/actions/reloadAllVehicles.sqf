@@ -18,19 +18,22 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 
 	{
 	    _vehicle = _X;
+		_vehicleType = Format["%1",typeOf _x];
 		
-		{
-			_x leaveVehicle _vehicle;
-		} forEach crew _vehicle;
+		if(((_vehicleType isKindOf "LandVehicle") OR (_vehicleType isKindOf "Air")) AND !(_vehicleType isKindOf "StaticWeapon")) then {
 		
-		deleteVehicle _vehicle;    
+			{
+				_x leaveVehicle _vehicle;
+			} forEach crew _vehicle;
+			
+			deleteVehicle _vehicle;
+		};
 	}forEach _allVehicles;
 
 	hint "Vehicles Deleted - Now Respawning them";
 
 	[] ExecVM "client\systems\adminPanel\actions\VehicleRespawn\vehicleSpawning.sqf";
 	
-	hint "WASTELAND SERVER - Vehicles Spawned";
 } else {
   exit;  
 };
