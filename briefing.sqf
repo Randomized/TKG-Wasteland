@@ -315,6 +315,32 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.0 (TKG)",
+"
+<br/>
+		[Update] - GUI Icons.<br/>
+		[Update] - The welcome screen shows more information with better colors.<br/>
+		[Changed] - Money drop amount in Player menu.<br/>
+		[Changed] - Tweeked Gun Store Hit ignore script.<br/>
+		[Changed] - Paycheck timer increased.<br/>
+		[Changed] - Vehicles now start with 20% fuel.<br/>
+		[Changed] - Gunstore no-kill range.<br/>
+		[Changed] - Techs can now delete and respawn all vehicles on teh map.<br/>
+		[Changed] - Some Admin scripting cleanup.<br/>
+		[Fixed] - Gunstore shooting script now works.<br/>
+		[Fixed] - Shows globally who drove over a player.<br/>
+		[Added] - You die if you kill someone inside the Gun Store area.<br/>
+		[Added] - Admins can now teleport to players or teleport players to them.<br/>
+		[Added] - Chat rules to the rules section on map.<br/>
+		[Added] - Shows when you are in 500m of a Gun Store.<br/>
+		[Removed] - Debug from admins.<br/>
+		[Removed] - Gun store and general store circles.<br/>
+"
+]
+];
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",
@@ -359,12 +385,24 @@ player createDiaryRecord["TKG_Wasteland_Rules",
 	Do not shoot inside the Gun store area!<br/><br/>
 	Shooting from outside the Gun Store area into the Gun Store area will result in a 1 Day ban.<br/><br/>
 	Driving over people inside the Gun Store area will result in a 1 Day ban.<br/><br/>
-	Camping the gun store area and killing player right outside the 200m Gun Store area will result in a 1 Day ban.<br/><br/>
+	Camping the gun store area and killing players right outside the 300m Gun Store area will result in a 1 Day ban.<br/><br/>
+	Shooting from outside the area into the area will get you killed.<br/><br/>
 	<br/>
 	System Warnings:<br/>
 	Warning 1: Deleting all your weapons.<br/>
 	Warning 2: Deleting all your weapons.<br/>
 	Warning 3: You will be kicked from the server.<br/>
+"
+]
+];
+
+player createDiaryRecord["TKG_Wasteland_Rules",
+[
+"Chat Rules",
+"
+<br/>
+	Do not use bad language. We have a system installed that will give you warnings for bad language. After your 3rd warning, you will then be kicked from the server.<br/><br/>
+	Only talk in English in Global, Side chat. We are a Multi-Gaming community and so we can not allow the chat logs to be filled with all sorts of languages.<br/>
 "
 ]
 ];
