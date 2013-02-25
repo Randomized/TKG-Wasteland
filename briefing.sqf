@@ -341,6 +341,19 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.0a (TKG)",
+"
+<br/>
+		[Fixed] - Deleting Vehicles and Players if you kill a player inside the gun store area with a Armed Vehicle.<br/>
+		[Fixed] - Near Gun Store Message display time increased.<br/>
+		[Changed] - New vehicles has been added to the Wasteland array.<br/>
+"
+]
+];
+
+
 player createDiaryRecord["TKGaming.com",
 [
 "Credits",
