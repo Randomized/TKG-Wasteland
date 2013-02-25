@@ -16,11 +16,11 @@ while {true} do
 		
 			MessageText = format["You are within 500m of a Gun Store area!"];
 			titleText [MessageText, "PLAIN"];
-			sleep 5;
+			sleep 3;
 			
 			//Clear Message
 			titleText ["", "PLAIN"];
-			sleep 5;
+			sleep 1;
 		};
 	} forEach _gunStoresWarning;
 };
