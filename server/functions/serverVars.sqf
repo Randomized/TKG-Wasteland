@@ -50,44 +50,53 @@ if (isServer) then {
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
 
 //Civilian Vehicle List - Random Spawns
-civilianVehicles = ["car_hatchback",
-					"car_sedan",
-					"datsun1_civil_2_covered",
-					"SkodaGreen",
-					"Lada2",
-					"V3S_Civ",
-					"UralCivil",
-					"VWGolf",
-					"MMT_Civ",
-					"Ikarus_TK_CIV_EP1",
-					"Lada1_TK_CIV_EP1",
-					"Old_moto_TK_Civ_EP1",
-					"S1203_TK_CIV_EP1",
+civilianVehicles = [
+					"hilux1_civil_1_open",
+					"hilux1_civil_2_covered",
+					"hilux1_civil_3_open",
+					"Ikarus",
+					"UAZ_CDF",
+					"UAZ_INS",
+					"UAZ_RU",
 					"UAZ_Unarmed_TK_CIV_EP1",
-					"ATV_US_EP1",
-					"BAF_Offroad_W",
-					"S1203_ambulance_EP1"];
+					"Ural_UN_EP1",
+					"Ural_TK_CIV_EP1",
+					"Offroad_DSHKM_Gue",
+					"Offroad_SPG9_Gue",
+					"SUV_PMC",
+					"SUV_UN_EP1",
+					"SUV_TK_EP1"
+					];
 
 //Military Vehicle List - Random Spawns
-militaryVehicles = ["UAZ_CDF",
-					"SUV_PMC",
-					"MTVR",
+militaryVehicles = [
 					"BAF_Offroad_W",
-					"HMMWV",
-					"HMMWV_Ambulance",
-					"S1203_ambulance_EP1",
-					"GAZ_Vodnik_MedEvac"];
+					"BAF_Offroad_D",
+					"HMMWV_DES_EP1",
+					"HMMWV_M1035_DES_EP1",
+					"HMMWV_Ambulance_DES_EP1",
+					"HMMWV_Ambulance_CZ_DES_EP1",
+					"GAZ_Vodnik_MedEvac"
+					];
 
 //Armed Military Vehicle List - Random Spawns
-armedMilitaryVehicles = ["ArmoredSUV_PMC",
-							"Pickup_PK_GUE",
-							"UAZ_MG_TK_EP1",
-							"LandRover_MG_TK_INS_EP1",
-							"HMMWV_M2",
-							"HMMWV_Armored",
-							"HMMWV_MK19",
-							"HMMWV_TOW",
-							"GAZ_Vodnik"];
+armedMilitaryVehicles = [
+						"ArmoredSUV_PMC",
+						"BTR40_MG_TK_GUE_EP1",
+						"BRDM2_ATGM_TK_EP1",
+						"HMMWV_Avenger",
+						"UAZ_MG_INS",
+						"BRDM2_ATGM_INS",
+						"Pickup_PK_GUE",
+						"UAZ_MG_TK_EP1",
+						"LandRover_MG_TK_INS_EP1",
+						"HMMWV_M2",
+						"HMMWV_Armored",
+						"HMMWV_MK19",
+						"HMMWV_M1151_M2_CZ_DES_EP1",
+						"GAZ_Vodnik",
+						"GAZ_Vodnik_HMG"
+						];
 
 //Item Config
 pickupList = ["Satelit",
@@ -147,13 +156,21 @@ staticWeaponsList = ["M2StaticMG_US_EP1",
 				"DSHKM_TK_INS_EP1"];
 
 //Object List - Random Helis.
-staticHeliList = ["UH1H_TK_GUE_EP1",
-				"Mi17_Civilian",
-                "MV22",
-                "CH_47F_EP1",
-                "MH6J_EP1",
-                "UH60M_MEV_EP1",
-                "AH6X_EP1"];
+staticHeliList = [
+				"Mi24_D_TK_EP1",
+				"BAF_Apache_AH1_D",
+				"UH60M_MEV_EP1",
+				"AH6J_EP1",
+				"Ka52Black",
+				"Mi24_V",
+				"UH1H_TK_GUE_EP1",
+				"MV22",
+				"CH_47F_EP1",
+				"UH60M_EP1",
+				"Mi17_INS",
+				"Mi17_CDF",
+				"Mi17_medevac_RU"
+				];
 
 //Random Weapon List - Change this to what you want to spawn in cars.
 vehicleWeapons = ["AK_107_kobra",
