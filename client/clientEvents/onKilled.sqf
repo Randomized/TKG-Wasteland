@@ -26,6 +26,15 @@ if (_player != _killer) then {
 		
 		if(player distance _unitOK <= _radiusOK) then {								//If the player is in the Gun Store radius
 		
+			_vehicleType = Format["%1",typeOf _killer];
+			
+			if(_vehicleType isKindOf "LandVehicle") then {
+				{
+					_x setDamage 1;
+					deletevehicle _x;
+				} forEach crew _killer;
+			};
+			hint _vehicleType;
 			_killer setDamage 1;
 			deletevehicle _killer;
 			
