@@ -16,7 +16,7 @@ if (_isWreck == 0) then {
 	//diag_log "Spawning heli complete...";
 	_spawnType = staticHeliList select (random (count staticHeliList - 1));
 	_currHeli = createVehicle [_spawnType,_spawnPos,[], 50,"None"]; 
-
+	
 	_currHeli setpos [getpos _currHeli select 0,getpos _currHeli select 1,0];
 
 	clearMagazineCargoGlobal _currHeli;
@@ -24,6 +24,10 @@ if (_isWreck == 0) then {
 
 	//Set original status to stop ner-do-wells
 	_currHeli setVariable["original",1,true];
+	
+	_currHeli setFuel (0.20);
+    _currHeli setDamage (random 0.50);
+	[_currHeli] call randomWeapons;
 } else {
 	//diag_log "Spawning heli wreck...";
 	_spawnType = staticHeliList select (random (count staticHeliList - 1));
