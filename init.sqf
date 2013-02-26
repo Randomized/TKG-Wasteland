@@ -58,4 +58,5 @@ if(X_Server) then {
 
 [] execVM "addons\scripts\notherm\twsremove.sqf";
 [300,300] execVM "addons\scripts\cly_removedead\cly_removedead.sqf";
+[] execVM "addons\scripts\deleteFoodWater.sqf";
 [] execVM "addons\scripts\advertise\advertise.sqf";

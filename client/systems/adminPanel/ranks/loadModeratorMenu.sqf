@@ -17,8 +17,10 @@ if ((_uid in Moderator)) then {
 	_displayMod = uiNamespace getVariable "ModMenu";
 	_modSelect = _displayMod displayCtrl modMenu_option;
 
-	_panelOptions = ["Player Menu",
-					"Vehicle Management"
+	_panelOptions = [
+		"Player Menu",
+		"Vehicle Management",
+		"Delete Food | Water"
 	];
 
 	{

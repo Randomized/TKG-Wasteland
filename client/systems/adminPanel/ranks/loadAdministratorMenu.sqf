@@ -17,12 +17,14 @@ if ((_uid in Administrator)) then {
 	_displayAdmin = uiNamespace getVariable "AdminMenu";
 	_adminSelect = _displayAdmin displayCtrl adminMenu_option;
 
-	_panelOptions = ["Player Menu",
-					"Vehicle Management",
-					"Tags",
-					"Teleport",
-	                "Money",
-					"Access Proving Grounds"
+	_panelOptions = [
+		"Player Menu",
+		"Vehicle Management",
+		"Tags",
+		"Teleport",
+		"Money",
+		"Access Proving Grounds",
+		"Delete Food | Water"
 	];
 
 	{

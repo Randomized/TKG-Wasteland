@@ -17,13 +17,15 @@ if ((_uid in GlobalStaff)) then {
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
 	_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;
 
-	_panelOptions = ["Player Menu",
-					"Vehicle Management",
-					"Tags",
-					"Teleport",
-	                "Money",
-	                "Debug Menu",
-					"Access Proving Grounds"
+	_panelOptions = [
+		"Player Menu",
+		"Vehicle Management",
+		"Tags",
+		"Teleport",
+		"Money",
+		"Debug Menu",
+		"Access Proving Grounds",
+		"Delete Food | Water"
 	];
 
 	{

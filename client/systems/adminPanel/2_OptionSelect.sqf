@@ -51,6 +51,11 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 					closeDialog 0;
 					execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 				};
+				case 2:// delete food and water
+				{
+					closeDialog 0;
+					execVM "client\systems\adminPanel\actions\deleteFoodWater.sqf";
+				};
 			};
 		};
 		case 1: //Administrator panel
@@ -86,6 +91,11 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 	                closeDialog 0;      
 					createDialog "balca_debug_main";
 			    };
+				case 6:// delete food and water
+				{
+					closeDialog 0;
+					execVM "client\systems\adminPanel\actions\deleteFoodWater.sqf";
+				};
 			};
 		};
 	    case 2: //Global Staff panel
@@ -126,6 +136,11 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 	                closeDialog 0;      
 					createDialog "balca_debug_main";
 			    };
+				case 7:// delete food and water
+				{
+					closeDialog 0;
+					execVM "client\systems\adminPanel\actions\deleteFoodWater.sqf";
+				};
 			};
 	    };
 	    case 3: //Debug panel
@@ -199,10 +214,10 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 					closeDialog 0;
 					player setVariable["cmoney", (player getVariable "cmoney")+1000,true];
 			    };
-				case 5:// Reload all Vehicles
+				case 5:// delete food and water
 				{
 					closeDialog 0;
-					execVM "client\systems\adminPanel\actions\reloadAllVehicles.sqf";
+					execVM "client\systems\adminPanel\actions\deleteFoodWater.sqf";
 				};
 				case 6: //Access Proving Grounds
 			    {
