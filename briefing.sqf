@@ -5,21 +5,12 @@ player createDiarySubject ["wasteland", "What is Wasteland?"];
 
 player createDiaryRecord["changelog",
 [
-"0.1",
+"Chernarus Changes",
 "
 <br/>
 		[Fixed] - Server performance issues.<br/>
 		[Fixed] - Vehicle cleanup.<br/>
 		[Fixed] - Team locking time which is actually 3 mins now.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.1",
-"
-<br/>
 		[Added] - Towing Limit Now Set to 1 Vehicle and Cars can Tow<br/>
 		[Added] - Some Static Helis<br/>
 		[Added] - Spawn Beacons<br/>
@@ -40,49 +31,13 @@ player createDiaryRecord["changelog",
 		[Fixed] - Money Drop Bug and Exploit<br/>
 		[Fixed] - JIP Loading Bug<br/>
 		[Fixed] - AI Running to Other Mission<br/>
-		[Fixed] - Numerous minor bugs and tweeks<br/>  
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.2",
-"
-<br/>
+		[Fixed] - Numerous minor bugs and tweeks<br/>
 		[Added] - Body Clean Up after a short period.<br/>
 		[Added] - Mobile Radar Station Mission.<br/>
 		[Changed] - Vehicle Clean made less aggressive.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.2b",
-"
-<br/>
 		[Changed] - Server Spawning Less Aggressive.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.3",
-"
-<br/>
 		[Fixed] - Drinking and Eating While in the car animation.<br/>
         [Fixed] - Other minor bugs.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.4",
-"
-<br/>
 		[Added] - Three new objects.<br/>
 		[Added] - More anti hack for vehicles.<br/>
 		[Added] - Check to make sure missions don't pop up in the same place.<br/>
@@ -92,15 +47,6 @@ player createDiaryRecord["changelog",
 		[Changed] - Increased delay for body clean up to 15 mins.<br/>
 		[Fixed] - Vehicle respawn script.<br/>
 		[Removed] - Some debuging.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.5",
-"
-<br/>
 		[Added] - Default weapon crates have been nerfed and more gun variations added.<br/>
 		[Added] - Static helis now spawn in random locations.<br/>
 		[Added] - When a static heli fails to spawn, a wreck is spawned instead.<br/>
@@ -111,15 +57,6 @@ player createDiaryRecord["changelog",
 		[Changed] - Various balance and price tweaks made to stores.<br/>
 		[Changed] - Chernarus is now in summer time. Longer days to be had by all.<br/>
 		[Changed] - Player starting money reduced to $100.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.6",
-"
-<br/>
 		[Added] - Groups.<br/>
         [Added] - Body and Object clean up.<br/>
 		[Added] - Static helis now spawn in random locations.<br/>
@@ -137,29 +74,11 @@ player createDiaryRecord["changelog",
 		[Changed] - Player starting money reduced to $100.<br/>
 		[Changed] - Various balance and price tweaks made to stores.<br/>
 		[Changed] - Chernarus is now in summer time. Longer days to be had by all.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.6 Dev3",
-"
-<br/>
 		[Added] - TKG Scrips added to remove dead bodys and objects every 10 minutes and TWS removal.<br/>
 		[Fixed] - Flickering Icons.<br/>
 		[Fixed] - Spawning with guns.<br/>
 		[Fixed] - Spawning in a group.<br/>
 		[Changed] - Removed Green Icons From Groups.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.7",
-"
-<br/>
 		[Added] - Better player join flow.<br/>
 		[Added] - Independent groups now have icons back.<br/>
 		[Fixed] - Disapearing icons on players who have been alive a long time.<br/>
@@ -168,6 +87,38 @@ player createDiaryRecord["changelog",
 		[Fixed] - Feedback messages missing.<br/>
 		[Fixed] - Money dupe.<br/>
 		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
+		[Added] - When spawning on a spawn beacon, you come in via HALO jump.<br/>
+		[Added] - New store interaction system.<br/>
+		[Added] - Supply drop mission written by OCUK MarKeR and tweaked by 404Games.<br/>
+		[Added] - Lots of new mission spawn locations.<br/>
+		[Fixed] - Floating crates/objects sometimes appearing above Novy.<br/>
+		[Fixed] - AI Team defend script. Be careful, they now actually use their mounted weapons!<br/>
+		[Fixed] - Vehicles no longer spawn in silly places / silly angles.<br/>
+		[Fixed] - Not able to interact with stores sometimes.<br/>
+		[Fixed] - Outpost having overpowered weapons.<br/>
+		[Fixed] - Other misc fixes that have been mentioned on the forums, Thanks for your help!<br/>
+		[Improved] - Vehicle HUD to now show the players respective role within the vehicle.<br/>
+		[Improved] - Mission spawning system thanks to Kettlewell.<br/>
+		[Fixed] - AI getting into mission vehicles.<br/>
+		[Fixed] - Fixed some issues with missions.<br/>
+		[Fixed] - Added in some defines for missions to easily edit the times.<br/>
+		[Added] - Most interactions now have a Cancel Action option.<br/>
+		[Fixed] - Abandoned Truck showing up as recon vehicle.<br/>
+		[Fixed] - Object lock now functions correctly.<br/>
+		[Fixed] - Spawn beacon, radar, object etc unlock/lock actions now stop on death.<br/>    
+		[Fixed] - The mission RPT errors.<br/>
+		[Fixed] - The vehicle count RPT error.<br/>
+		[Fixed] - mission_Outpost timeout.<br/>
+		[Changed] - Gun and General stores no longer have over-powered super radars.<br/>
+		[Changed] - Player now starts with only 1x food and water.<br/>
+		[Changed] - Added more variation to vehicle weapons spawns and removed OP weapons.<br/>
+		[Enhancement] - Refuel and Repair vehicle functions have been improved.<br/>
+		[Enhancement] - The mission RPT's to have more information to help with debuging.<br/>
+		[Enhancement] - Server startup optimizations.<br/>
+		[Enhancement] - General wasteland mission optimizations; many changes to improve performance.<br/>
+		[Enhancement] - Made some changes to defend area to make the AI more aware.<br/>
+		[Enhancement] - The mission system is now all pre compiled and steamlined to make it run smoother.<br/>
+		[Enhancement] - Mission will no longer run the same one twice.<br/>
 "
 ]
 ];
@@ -246,66 +197,7 @@ player createDiaryRecord["changelog",
 
 player createDiaryRecord["changelog",
 [
-"2.8",
-"
-<br/>
-		[Added] - When spawning on a spawn beacon, you come in via HALO jump.<br/>
-		[Added] - New store interaction system.<br/>
-		[Added] - Supply drop mission written by OCUK MarKeR and tweaked by 404Games.<br/>
-		[Added] - Lots of new mission spawn locations.<br/>
-		[Fixed] - Floating crates/objects sometimes appearing above Novy.<br/>
-		[Fixed] - AI Team defend script. Be careful, they now actually use their mounted weapons!<br/>
-		[Fixed] - Vehicles no longer spawn in silly places / silly angles.<br/>
-		[Fixed] - Not able to interact with stores sometimes.<br/>
-		[Fixed] - Outpost having overpowered weapons.<br/>
-		[Fixed] - Other misc fixes that have been mentioned on the forums, Thanks for your help!<br/>
-		[Improved] - Vehicle HUD to now show the players respective role within the vehicle.<br/>
-		[Improved] - Mission spawning system thanks to Kettlewell.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.8a",
-"
-<br/>
-		[Fixed] - AI getting into mission vehicles.<br/>
-		[Fixed] - Fixed some issues with missions.<br/>
-		[Fixed] - Added in some defines for missions to easily edit the times.<br/>
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"2.9",
-"
-<br/>
-		[Added] - Most interactions now have a Cancel Action option.<br/>
-		[Fixed] - Abandoned Truck showing up as recon vehicle.<br/>
-		[Fixed] - Object lock now functions correctly.<br/>
-		[Fixed] - Spawn beacon, radar, object etc unlock/lock actions now stop on death.<br/>    
-		[Fixed] - The mission RPT errors.<br/>
-		[Fixed] - The vehicle count RPT error.<br/>
-		[Fixed] - mission_Outpost timeout.<br/>
-		[Changed] - Gun and General stores no longer have over-powered super radars.<br/>
-		[Changed] - Player now starts with only 1x food and water.<br/>
-		[Changed] - Added more variation to vehicle weapons spawns and removed OP weapons.<br/>
-		[Enhancement] - Refuel and Repair vehicle functions have been improved.<br/>
-		[Enhancement] - The mission RPT's to have more information to help with debuging.<br/>
-		[Enhancement] - Server startup optimizations.<br/>
-		[Enhancement] - General wasteland mission optimizations; many changes to improve performance.<br/>
-		[Enhancement] - Made some changes to defend area to make the AI more aware.<br/>
-		[Enhancement] - The mission system is now all pre compiled and steamlined to make it run smoother.<br/>
-		[Enhancement] - Mission will no longer run the same one twice.<br/>  
-"
-]
-];
-
-player createDiaryRecord["changelog",
-[
-"1.9a",
+"1.9a (TKG)",
 "
 <br/>
 		[Added] Rules on the objective log when opening map<br/>
@@ -353,6 +245,26 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.1 (TKG)",
+"
+<br/>
+		
+		[Added] - Donation Starter gear.<br/>
+		[Added] - Spawn on Random Store now.<br/>
+		[Added] - Kick option for Admins.<br/>
+		[Added] - Helicopters now have weapons inside of their gear.<br/>
+		[Changed] - 12 helicopters spawn instead of 8.<br/>
+		[Changed] - Helicopters start with 20% fuel.<br/>
+		[Changed] - Helicopters have a chance of being damaged.<br/>
+		[Changed] - Near Gun Store Message time increased.<br/>
+		[Updated] - Advertising Information.<br/>
+		[Fixed] - Loading image.<br/>
+"
+]
+];
+
 
 player createDiaryRecord["TKGaming.com",
 [
@@ -360,9 +272,17 @@ player createDiaryRecord["TKGaming.com",
 "
 <br/>
 	Contributors:<br/><br/>
-	Credit to Tonic for original game-mode creation.<br/><br/>
-	404Developers - Deadbeat, Costlyy, Pulse<br/>
-	TKG Developers - Leavaris, Zuen<br/>
+	TKG Wasteland Developers:<br/>
+	- Leavaris<br/>
+	- Zuen<br/><br/>
+	
+	
+	Credit:<br/>
+	- Tonic (original game-mode)<br/>
+	- Deadbeat (404Developers)<br/>
+	- Costlyy (404Developers)<br/>
+	- Pulse (404Developers)<br/>
+	<br/>
 	Server Host - TKGaming.com<br/>
 "
 ]
