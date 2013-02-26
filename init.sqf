@@ -41,7 +41,8 @@ if(X_Client) then {
 		diag_log "Player Group Wiped";
 		[player] join grpNull;    
 	};
-
+	
+	[] execVM "addons\scripts\donationPerks.sqf";
 	[] execVM "client\init.sqf";
 };
 

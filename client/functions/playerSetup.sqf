@@ -5,6 +5,10 @@
 //	@file Args:
 
 _player = _this;
+
+//Get GUID
+_uid = getPlayerUID _player;
+
 //Player initialization
 _player setskill 0;
 {_player disableAI _x} foreach ["move","anim","target","autotarget"];
@@ -65,6 +69,35 @@ _player setVariable["fuelEmpty", 1, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
+
+// ///////////////////////
+// DONATOR PLAYER
+// ///////////////////////
+if(_uid in Donation_1) then 
+{
+	removeAllWeapons _player;
+	
+	//Pistol
+	_player addMagazine "30Rnd_9x19_UZI_SD";
+	_player addMagazine "30Rnd_9x19_UZI_SD";
+	_player addMagazine "30Rnd_9x19_UZI_SD";
+	_player addWeapon "UZI_SD_EP1";
+	
+	//Misc
+	_player addWeapon "ItemGPS";
+	_player addWeapon "Binocular";
+	
+	//Main Weapon
+	_player addMagazine "20Rnd_762x51_DMR";
+	_player addMagazine "20Rnd_762x51_DMR";
+	_player addWeapon "M14_EP1";
+	_player selectWeapon "M14_EP1";
+	
+	_player setVariable["cmoney",200,false];
+	_player setVariable["canfood",2,false];
+	_player setVariable["water",2,false];
+	_player setVariable["fuelEmpty", 2, false];
+};
 
 [] execVM "client\functions\playerActions.sqf";
 
