@@ -9,7 +9,7 @@ sleep 300;
 
 _AddvertiseArray = [
 	["Donation", "Help keep these servers up by sending a donation to tkgaming.com"],
-	["Servers", "We have 2 DayZ servers, 4 Wasteland servers and 4 Minecraft servers."],
+	["Servers", "We have 1 DayZ servers, 2 Wasteland servers and 2 Minecraft servers."],
 	["Website", "Come join us on the forums and be part of the next decision that TKG is making!"],
 	["Join TKG", "TKG is a community and not a clan. Come join us on TeamSpeak and become part of the great community."],
 	["YouTube", "TKG has some awesome YouTubers out there making videos for the community. Make sure to go check out <t color='#9482C9'>iZuen</t> on YouTube!"],
