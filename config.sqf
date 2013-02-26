@@ -153,3 +153,16 @@ cityList = [
 		["Town_46",200,"Dubrovka"]
 ];
 cityLocations = [];
+
+// Chernarus Gun Store array
+//Marker Name, Radius, Store Name
+storeList = [
+		["Town_1",200,"Prigorodki"],
+		["Town_13",250,"Gvozdno"],
+		["Town_26",200,"Bor"],
+		["Town_37",200,"Guglovo"],
+		["Town_12",350,"Krasnostav"],
+		["Town_44",200,"Polana"],
+		["Town_3",600,"Elektro"],
+		["Town_21",300,"Zelenogorsk"]
+];

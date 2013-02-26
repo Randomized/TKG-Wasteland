@@ -13,7 +13,7 @@
 #define respawn_PlayersInTown_Text4 3412
 
 
-	class RespawnSelectionDialog {
+class RespawnSelectionDialog {
 		idd = respawn_dialog;
 		movingEnable = false;
 		enableSimulation = true;
@@ -161,14 +161,26 @@
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
-			text = "Random";
+			text = "Random Town";
 
-			x = 0.460* safezoneW + safezoneX;
+			x = 0.404* safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
-			w = 0.078 * safezoneW;
+			w = 0.082 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
+		
+		class RandomPlayerButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
+			text = "Random Store";
 
+			x = 0.513* safezoneW + safezoneX;
+			y = 0.310 * safezoneH + safezoneY;
+			w = 0.082 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		
 		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
