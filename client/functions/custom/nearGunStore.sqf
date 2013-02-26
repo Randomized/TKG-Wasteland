@@ -20,7 +20,7 @@ while {true} do
 			
 			//Clear Message
 			titleText ["", "PLAIN"];
-			sleep 1;
+			sleep 10;
 		};
 	} forEach _gunStoresWarning;
 };
