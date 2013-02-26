@@ -128,22 +128,11 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
 		};
 
-		class WarnButton: w_RscButton
-		{
-			idc = -1;
-			text = "Go TP";
-			onButtonClick = "[1] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
-			x = 0.535 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-
 		class SlayButton: w_RscButton
 		{
 			idc = -1;
 			text = "Slay";
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			onButtonClick = "[1] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.2625 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
@@ -155,7 +144,7 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock TSwitch";
-			onButtonClick = "[3] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			onButtonClick = "[2] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.325 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.1 * safezoneW;
@@ -167,12 +156,23 @@ class PlayersMenu
 		{
 			idc = -1;
 			text = "Unlock TKill";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			onButtonClick = "[3] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.4375 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.0875 * safezoneW;
 			h = 0.04 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
+		};
+		
+		class WarnButton: w_RscButton
+		{
+			idc = -1;
+			text = "Go TP";
+			onButtonClick = "[4] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			x = 0.535 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 		
 		class PlayerEditBox:w_RscButton
@@ -181,6 +181,17 @@ class PlayersMenu
 			text = "TP Player";
 			onButtonClick = "[5] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
 			x = 0.60 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+		
+		class KickButton: w_RscButton
+		{
+			idc = -1;
+			text = "Kick";
+			onButtonClick = "[6] execVM 'client\systems\adminPanel\actions\playerSelect.sqf'";
+			x = 0.665 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;

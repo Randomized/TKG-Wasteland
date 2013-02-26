@@ -34,7 +34,10 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 	}forEach playableUnits;
 
 	if (_check == 0) then {exit;};
-
+	
+	//Get Enemy UID
+	_targetUID = getPlayerUID _target;
+	
 	switch (_switch) do
 	{
 	    case 0: //Spectate
@@ -73,17 +76,7 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 				camDestroy _camadm;
 			};
 		};
-		case 1: //Go To Player
-		{
-			hint format["Go To Player: %1", name _target];
-			vehicle player setPos (getPos _target);
-		};
-		case 5: //Teleport Player
-		{
-			hint format["Player Teleported: %1", name _target];
-			vehicle _target setPos (getPos player);
-		};
-	    case 2: //Slay
+		case 1: //Slay
 	    {
 			_target setVehicleInit format["if (name player == ""%1"") then {
 				player setdamage 1; 
@@ -92,7 +85,7 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 			processInitCommands;
 			clearVehicleInit _target;
 	    };
-	    case 3: //Unlock Team Switcher
+	    case 2: //Unlock Team Switcher
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -112,7 +105,7 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 			    };
 			}forEach pvar_teamSwitchList;			
 	    };
-		case 4: //Unlock Team Killer
+		case 3: //Unlock Team Killer
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -124,10 +117,27 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 
 	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];
 			        processInitCommands;
-			        clearVehicleInit player;       
+			        clearVehicleInit player;
 			    };
 			}forEach pvar_teamKillList;       		
 	    };
+		case 4: //Go To Player
+		{
+			hint format["Go To Player: %1", name _target];
+			vehicle player setPos (getPos _target);
+		};
+		case 5: //Teleport Player
+		{
+			hint format["Player Teleported: %1", name _target];
+			vehicle _target setPos (getPos player);
+		};
+		case 6: //Kick Player
+		{
+			hint format["Player Kicked: %1", _targetUID];
+			_target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1; Endmission ""END1"";failMission ""END1"";forceEnd; deletevehicle player;};",name _target];
+			processInitCommands;
+			clearVehicleInit _target;
+		};
 	};
 } else {
   exit;  
