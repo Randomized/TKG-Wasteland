@@ -265,6 +265,25 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"2.1a (TKG)",
+"
+<br/>
+		[Added] - Delete Staff and Donor gear on death.<br/>
+		[Added] - Stop dropping food and water if more than 50 is already on map.<br/>
+		[Added] - Staff can delete for and water from server<br/>
+		[Added] - Can now teleport to hacked vehicle with Vehicle Management system.<br/>
+		[Changed] - Changed Vehicle management screen.<br/>
+		[Changed] - Can hold up to 5 food and water now.<br/>
+		[Changed] - Donation starting gear changed.<br/>
+		[Changed] - Distance of showing Gun Store radious changed to 300m<br/>
+		[Removed] - Server Food and Water scrip deleted.<br/>
+		[Fixed] - Small Vehicle management pathing error.<br/>
+"
+]
+];
+
 
 player createDiaryRecord["TKGaming.com",
 [
