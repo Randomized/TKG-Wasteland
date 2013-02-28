@@ -84,14 +84,13 @@ if(_uid in Donation_1) then
 	_player addWeapon "UZI_SD_EP1";
 	
 	//Misc
-	_player addWeapon "ItemGPS";
 	_player addWeapon "Binocular";
 	
 	//Main Weapon
-	_player addMagazine "20Rnd_762x51_DMR";
-	_player addMagazine "20Rnd_762x51_DMR";
-	_player addWeapon "M14_EP1";
-	_player selectWeapon "M14_EP1";
+	_player addMagazine "30Rnd_556x45_Stanag";
+	_player addMagazine "30Rnd_556x45_Stanag";
+	_player addWeapon "M16A4";
+	_player selectWeapon "M16A4";
 	
 	_player setVariable["cmoney",200,false];
 	_player setVariable["canfood",2,false];
