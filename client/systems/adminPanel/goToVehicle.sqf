@@ -1,7 +1,7 @@
 //	@file Version: 1.0
-//	@file Name: deleteVehicle.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 20/11/2012 05:19
+//	@file Name: goToVehicle.sqf
+//	@file Author: [TKG] Zuen
+//	@file Created: 28/02/2013 21:01
 //	@file Args:
 
 #define vehicleManagementDialog 12000
@@ -22,23 +22,20 @@ if ((_uid in Moderator) OR (_uid in Administrator) OR (_uid in Technician) OR (_
 
 	_selectedItem = lbCurSel _vehicleListBox;
 	_selectedItemData = _vehicleListBox lbData _selectedItem;
-
-	player commandChat format ["Deleting %1",_selectedItemData];
+	
 	{
 	    _vehicle = _X;
+		
 		if(str(_vehicle) == _selectedItemData) then
 	    {
-	        {
-	            _x leaveVehicle _vehicle;
-	        } forEach crew _vehicle;
-	        deleteVehicle _vehicle;    
+	        vehicle player setPos (getPos _vehicle);
 	    };    
 	}forEach _allVehicles;
 
 	player commandChat "Vehicle Deleted";
 
 	closeDialog 0;
-	execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
+execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
 } else {
   exit;  
 };

@@ -36,4 +36,4 @@ _allVehicles = vehicles;
 player commandChat "All Hacked Vehicles Deleted";
 
 closeDialog 0;
-execVM "client\systems\adminPanel\vehicleManagement.sqf";
+execVM "client\systems\adminPanel\actions\vehicleManagement.sqf";
