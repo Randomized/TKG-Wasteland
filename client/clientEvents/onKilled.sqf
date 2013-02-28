@@ -8,6 +8,8 @@ _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
 
+_getUID = getPlayerUID player;
+
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {
@@ -15,6 +17,11 @@ if (isServer) then {
 };
 
 if(!local _player) exitwith {};
+
+//DELETE STAFF AND DONOR BODIES
+if ((_getUID in Moderator) OR (_getUID in Administrator) OR (_getUID in Technician) OR (_getUID in GlobalStaff) OR (_getUID in Donation_1)) then {
+	removeAllWeapons _player;
+};
 
 // Create a script which checks where your location was and the enemies position is.
 _radiusOK = 300;																	//The radius from the Gun Stores
@@ -119,7 +126,29 @@ if((_player getVariable "repairkits") > 0) then {
 	};
 };
 
-if((_player getVariable "canfood") > 0) then {
+// DROP FOOD AND WATER IF NOT ENOUGHT ON MAP
+_allVehicles = vehicles;
+_vehicleCountFood = 0;
+_vehicleCountWater = 0;
+
+{
+	_vehicle = _X;
+	_vehicleType = Format["%1",typeOf _x];
+	
+	//deleteVehicle _vehicle;
+	
+	if( (_vehicleType isKindOf "Land_Bag_EP1") OR (_vehicleType isKindOf "Land_Teapot_EP1") ) then {
+	
+		if(_vehicleType isKindOf "Land_Bag_EP1") then {
+			_vehicleCountFood = _vehicleCountFood + 1;
+		} else {
+			_vehicleCountWater = _vehicleCountWater + 1;
+		};
+	};
+	
+}forEach _allVehicles;
+
+if((_player getVariable "canfood") > 0 AND _vehicleCountFood < 50) then {
 	for "_c" from 1 to (_player getVariable "canfood") do {	
 		player setVariable["canfood",(player getVariable "canfood")-1,true];
 		_temp1 = "Land_Bag_EP1" createVehicle (position player);
@@ -128,7 +157,7 @@ if((_player getVariable "canfood") > 0) then {
 	};
 };
 
-if((_player getVariable "water") > 0) then {
+if((_player getVariable "water") > 0 AND _vehicleCountWater < 50) then {
 	for "_d" from 1 to (_player getVariable "water") do {	
 		player setVariable["water", (player getvariable "water")-1,true];
 		_temp2 = "Land_Teapot_EP1" createVehicle (position player);
