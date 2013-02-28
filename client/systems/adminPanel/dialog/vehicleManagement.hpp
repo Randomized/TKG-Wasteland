@@ -24,30 +24,31 @@ class VehicleManagement {
 		{
 			idc = -1;
 			text = "\ca\ui\data\ui_background_controlers_ca.paa";
-			x = 0.295 * safezoneW + safezoneX;
-			y = 0.228 * safezoneH + safezoneY;
-			w = 0.550 * safezoneW;
-			h = 0.543 * safezoneH;
+			x = 0.1875 * safezoneW + safezoneX;
+			y = 0.15 * safezoneH + safezoneY;
+			w = 0.837499 * safezoneW;
+			h = 0.661111 * safezoneH;
 		};
 
 		class menuTitle: w_RscText
 		{
 			idc = -1;
 			text = "Vehicle Management";
-			x = 0.453 * safezoneW + safezoneX;
-			y = 0.248 * safezoneH + safezoneY;
-			w = 0.091 * safezoneW;
-			h = 0.030 * safezoneH;
+			x = 0.203125 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
 		};
 
 		class amountOfVehicles: w_RscText
 		{
 			idc = vehicleManagementVehicleCount;
 			text = "";
-			x = 0.335 * safezoneW + safezoneX;
-			y = 0.292 * safezoneH + safezoneY;
-			w = 0.121 * safezoneW;
+			x = 0.227604 * safezoneW + safezoneX;
+			y = 0.22363 * safezoneH + safezoneY;
+			w = 0.150 * safezoneW;
 			h = 0.031 * safezoneH;
+			
 		};
 
 		class weaponsText: w_RscText
@@ -101,76 +102,76 @@ class VehicleManagement {
 		{
 			idc = vehicleManagementListBox;
 			onLBSelChanged="[1,_this select 1] execVM ""client\systems\adminPanel\importvalues.sqf"";";
-			x = 0.335938 * safezoneW + safezoneX;
-			y = 0.337963 * safezoneH + safezoneY;
-			w = 0.32875 * safezoneW;
-			h = 0.250 * safezoneH;
+			x = 0.227604 * safezoneW + safezoneX;
+			y = 0.25463 * safezoneH + safezoneY;
+			w = 0.545417 * safezoneW;
+			h = 0.343889 * safezoneH;
 		};
 		
 		class civButton: w_RscButton
 		{
 			idc = vehicleManagementCivButton;
 			onButtonClick = "[0] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Cars/Trucks";
-			x = 0.305 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			text = "Cars";
+			x = 0.2 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 
 		class heliButton: w_RscButton
 		{
 			idc = vehicleManagementHeliButton;
 			onButtonClick = "[1] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Helicopters";
-			x = 0.38 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			text = "Helicopter";
+			x = 0.26 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 
 		class planeButton: w_RscButton
 		{
 			idc = vehicleManagementPlaneButton;
 			onButtonClick = "[2] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Planes";
-			x = 0.305 * safezoneW + safezoneX;
-			y = 0.730 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			text = "Plane";
+			x = 0.32 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 
 		class tankButton: w_RscButton
 		{
 			idc = vehicleManagementTankButton;
 			onButtonClick = "[3] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Tanks";
+			text = "Tank";
 			x = 0.38 * safezoneW + safezoneX;
-			y = 0.730 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 
 		class hackedVehiclesButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Hacked Vehicles";
-			x = 0.455 * safezoneW + safezoneX;
-			y = 0.72 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			text = "Show All";
+			x = 0.44 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 		};
 
 		class deleteButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "execVM 'client\systems\adminPanel\deleteVehicle.sqf'";
-			text = "Delete Vehicle";
-			x = 0.62 * safezoneW + safezoneX;
-			y = 0.72 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			text = "Delete";
+			x = 0.50 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
 
@@ -179,10 +180,22 @@ class VehicleManagement {
 			idc = -1;
 			onButtonClick = "execVM 'client\systems\adminPanel\deleteAllHackedVehicles.sqf'";
 			text = "Delete All";
-			x = 0.545 * safezoneW + safezoneX;
-			y = 0.72 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+			x = 0.56 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.07 * safezoneW;
+			h = 0.04 * safezoneH;
+			color[] = {0.95,0.1,0.1,1};
+		};
+		
+		class goToVehicleButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "execVM 'client\systems\adminPanel\goToVehicle.sqf'";
+			text = "Go To Vehicle";
+			x = 0.62 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.08 * safezoneW;
+			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
 	};
