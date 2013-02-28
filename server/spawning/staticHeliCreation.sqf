@@ -26,7 +26,6 @@ if (_isWreck == 0) then {
 	_currHeli setVariable["original",1,true];
 	
 	_currHeli setFuel (0.20);
-    _currHeli setDamage (random 0.50);
 	[_currHeli] call randomWeapons;
 } else {
 	//diag_log "Spawning heli wreck...";

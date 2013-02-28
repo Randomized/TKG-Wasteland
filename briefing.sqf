@@ -277,7 +277,8 @@ player createDiaryRecord["changelog",
 		[Changed] - Changed Vehicle management screen.<br/>
 		[Changed] - Can hold up to 5 food and water now.<br/>
 		[Changed] - Donation starting gear changed.<br/>
-		[Changed] - Distance of showing Gun Store radious changed to 300m<br/>
+		[Changed] - Distance of showing Gun Store radious changed to 300m.<br/>
+		[Changed] - Static Helicopters will be fully repaired again.<br/>
 		[Removed] - Server Food and Water scrip deleted.<br/>
 		[Fixed] - Small Vehicle management pathing error.<br/>
 "
